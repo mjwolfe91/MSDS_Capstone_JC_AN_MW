@@ -1,0 +1,99 @@
+% LLNCS class package used for SMU Data Science Review Journal
+\documentclass{llncs}
+
+% Packages to be used in the document
+\usepackage{graphicx} % display figures sample figures - EPS format (preferred), PDF/JPEG also acceptable
+\usepackage{booktabs} % Better horizontal rules in tables
+\usepackage{multirow} % Better combined rows in tables
+\usepackage{xcolor} % Change font color for editing purposes
+\usepackage{hyperref} % Footnote references
+\usepackage{mathtools}
+
+
+
+% Paper Title
+\title{\textbf{Signal Processing of Geospatial and Biometric Data from Wearable Devices for Fall Detection}}
+
+% Complete List of Authors with Affiliations
+\author{Joseph Caguioa\inst{1}\and Andy Nguyen\inst{1}\and  Michael J. Wolfe\inst{1}\and Jacquelyn Cheun\inst{1}} %Capstone Advisor: Jacquelyn Cheun
+
+\institute{Master of Science in Data Science, Southern Methodist University, Dallas TX 75275 USA
+	      \email{\{jcaguioa, andynguyen, mwolfe\}@smu.edu} 
+	      % \and Add further credentials/companies for yourselves @Michael/Joseph
+	      }	  
+
+% Begin Document 
+\begin{document}
+
+% Typeset the title & authors of paper
+\maketitle
+% Reset footnote counter
+\setcounter{footnote}{0}
+
+% Abstract Typeset
+\begin{abstract}
+In this paper, we present a detection algorithm that accurately differentiates the event of a person falling from normal activities of daily living (ADL). Our algorithm processes signals recorded from accelerometers built into wearable activity monitoring devices such as a Fitbit or Apple Watch that is worn on an individual's wrist. Given the potential danger of injury resulting from a fall, especially for the elderly population whom are more susceptible, an accurate fall detection algorithm could be the precursor to an autonomous emergency alert system that pages paramedics. Immediate medical intervention is critical for survival in urgent situations such as a stroke, cardiac event, or TBI; unfortunately, in many of these cases the individual may be unconscious and unable to intervene on their own behalf. With the advancement of geospatial technology, an algorithm that can distinctly detect the event of a fatal fall can automatically trigger a call for emergency medical services to the exact GPS coordinates of a mobile device or the wearable wrist device itself. We will explore the use of a combination of threshold-based and machine learning-based approaches to develop a refined fall-detection algorithm that builds upon previous research. 
+%  Need to include - two to three sentences are used to state how the problem was solved. A single statement of the main result (singular) is then followed by a single statement of the main conclusion (singular).
+\keywords{fall detection \and activities of daily living (ADL) \and signal processing}
+\end{abstract}
+
+% We most likely need to include a Related Works subsection to discuss previous ideas we might take when building our own algorithm.
+
+
+% Note that paragraphs are created by placing a blank line before the 
+% paragraph within the .tex file just as a blank line exists before the
+% beginning of this comment. That blank line tells LaTeX to treat the 
+% following text as a new paragraph.  No other commands are needed.
+
+
+% Sections are denoted by the use of the \section{Section Name} 
+% command -- where "Section Name" is the name you give to the Section.
+\section{Introduction}
+
+In 2016, approximately 30,000 adults aged 65 years and older died as the result of fatal falls, the leading cause of injury-related fatalities within this age range. The adjusted-age death rates for this senior population in the United States have steadily increased 31\% from 2007 to 2016, with an estimated 43,000 deaths due to fatal falls in 2030 if these current rates remain stable. These higher death rates are consistent with risk factors of advanced age as well as other associated predispositions such as: 1) reduced activity; 2) chronic conditions, including arthritis, neurologic disease, and incontinence; 3) increased use of prescription medications, which might act synergistically on the central nervous system; and 4) age-related changes in gait and balance.
+\footnote{\url{https://www.cdc.gov/mmwr/volumes/67/wr/mm6718a1.htm?s_cid=mm6718a1_w}}
+
+	Globally, the World Health Organization (WHO) reports an estimated 37.3 million falls annually that require medical attention and potentially hospitalization, which is the second leading cause of accidental or unintentional injury deaths worldwide. From these falls, the WHO reports an estimated 646,000 fatalities globally with over 80\% occurring in low and middle income regions. Their findings are consistent with the fact that adults older than 65 experience the greatest incidents of fatalities from a fall, but report a wider range of risk factors that include: 1) occupations with hazardous working conditions, 2) substance abuse, 3) socioeconomic factors, 4) underlying medical conditions, 5) side effects of medication, and 6) physical depreciation. 
+\footnote{\url{https://www.who.int/news-room/fact-sheets/detail/falls}}
+
+	The danger of a fall is not life-threatening itself, but is associated with potential complications of the event such as a stroke or a traumatic brain injury (TBI). In such cases, an accurate fall-detection algorithm developed from the sensor data built into wearable activity monitors on an individual's wrist could be invaluable. With the detection of a fall, the wrist device could be programmed to alert paramedics and dispatch them to the exact GPS location of the device for immediate medical intervention. 
+
+	We will analyze how competing algorithms perform when combining a threshold-based model with different machine learning-based models. We are specifically interested in seeing how linear discriminant analysis (LDA), support vector machines and support vector classification (SVM/SVC), naïve Bayesian (NB), decision trees (DT), and random forests (RF) compare on a binary-classification task that differentiates between a fall and an ADL. We will compare competing models based on the classification accuracy, specificity, sensitivity, and precision using ROC-AUC curve to visualize the results. 
+	
+	% How will we define the threshold value for a fall?
+		% picture a physics problem: *HP means hyper parameter*
+			% an object in free fall [normalForce_up, gravitationalForce_down (HP: weight)]
+			% an object at rest on the surface [dragForce_up (HP: dragCoefficient_up) , gravitationalForce_down (HP_constant: 9.8m/s^2]
+	
+	% Look into reinforcement learning and see if it can us solve the problem.
+	
+		
+
+
+
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted according to alphabetical 
+% and formatted in the correct style.
+%
+ \bibliographystyle{splncs04}
+ \bibliography{samplebib}
+
+
+% End the Document
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
