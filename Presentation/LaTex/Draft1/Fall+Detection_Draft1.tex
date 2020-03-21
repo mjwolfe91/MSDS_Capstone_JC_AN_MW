@@ -80,6 +80,20 @@ In 2016, approximately 30,000 adults aged 65 years and older died as the result 
 	
 	% Look into reinforcement learning and see if it can us solve the problem.
 	
+	The first question is defining a fall itself. Fortunately, science defines this for us fairly succinctly in Newtonian physics, where any object upon which gravity is the only actor is said to be in free fall. A fall could be analyzed in much the same way - a person is said to be falling when gravity has more control of their movement than they or another person or device may have at that moment.
+	
+	The question then becomes how we define a fall in the context of the algorithm. We already mentioned sensors and accelerometers as our tools of measurings a person's ADL and current state. Principle components or quadratic discriminants could be a simple method of measuring changes in state. Since we are not interested in the exact measurements in space - only types of changes - PCA or QDA could be a simple and efficient way of detecting changes. The challenge then becomes finding the range of the minority response.
+	
+	Since there will be multiple types of falls, as well as falls that appear similar to other ADLs, establishing a threshold for falls - anomalies in this context - will be critical to this algorithm being successful. It is not reasonable to expect a small amount of anomalies to be sufficient in detecting any type of fall, nor all types. Therefore, we plan to leverage methods such as reinforcement learning to solve this problem.
+	
+	At the crux of fall detection is striking a balance between exploiting the known (leaning on the knowledge of past falls) and exploring the unknown (discerning new falls and types of falls). Reinforcement learning is best suited to this task, as it will be key for this algorithm to seek to learn from past errors, both Type I and Type II, and reduce error going forward.
+	
+	This has proven to be effective in past experiments with movement. Although there have been no uses in fall detection that we could find, researchers at the University of Porto have tested reinforcement learning in teaching robots to move in quicker, more efficient ways. By using a policy reuse algorithm, they were able to significantly improve the robot's gait when compared to other gait-improvement algorithms.\footnote{\urlhttps://www-sciencedirect-com.proxy.libraries.smu.edu/science/article/pii/S0952197619302921}}
+	
+	Policy reuse could be particularly useful in our case. By maximizing the reward of our decision process, we can ensure our algorithm is more accurate with the more decision points we create. The challenge with this, again, is the unbalanced response. Without a handful of falls to train on, we still might not maximize this function. One way to counteract this is to introduce Monte Carlo methods. Even if our algorithm were to go into long periods of majority state, a Monte Carlo method would ensure continuous evaluation to make sure policies are improved.
+	
+	
+	
 \section{Related Work} % More Background Information
 \section{Materials and Methods}
 \section{Results and Discussion}
