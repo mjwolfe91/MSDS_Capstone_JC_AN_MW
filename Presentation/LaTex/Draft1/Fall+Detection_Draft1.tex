@@ -76,7 +76,21 @@ The elderly are most prone to the dangers of falling that may significantly impa
 % The average life expectancy for U.S. citizens estimated to be 78.6 years of age. \footnote{\url{https://www.cdc.gov/nchs/fastats/life-expectancy.htm}} 
 	
 \section{Related Work} 
-% More Background Information: Falls, Wearables, and Algorithms
+
+    Fall detection is a rich field with considerable depth and breadth. Much work has been done on all levels, from algorithms to detect falls from certain positions or heights to simply studying and defining movement in general. One of the most prominent studies for our purposes is the Burns study on fall-related deaths in the elderly. \cite{burns2018deaths} This is the primary impetus for our project - fall-related deaths are common and preventable with timely intervention.
+
+    In \cite{noury2007principles}, fall scenarios are categorized for evaluation purposes: namely forward, backward, and lateral. Fall-like scenarios such as syncope, where a fainted individual slips down a wall into a sitting position, are also mentioned. Such categorizations are later used in many studies for fall events.
+
+    Methods that use accelerometers to detect a fall typically analyze data about a person's acceleration before, during, and after the event. Terminology varies between studies, but most describe the segmentation in the following chronological order: a normal ADL period succeeded by a sudden spike in acceleration within a short time window, followed by a sudden deceleration on impact, followed by an extended period of no acceleration if the person is incapable of recovering or calling for assistance themselves. Events with slower falls or multiple impacts may have slightly different profiles of acceleration over time \cite{kangas2009sensitivity}.
+
+    In our literature review, we discovered that many fall detection studies had implemented similar pre-processing of their data. By combining accelerometer data with sensor metrics, researchers created Acceleration Vector Changes. This is a vector of acceleration changes by sensor, indicating the subject's motion in a given period of time. This can be tested in a variety of methods, ranging from a simple threshold analysis to training a classification algorithm.
+
+    Gjoreski's various studies use this method. For example, their early work compared different classifiers and their effectiveness in detecting falls. Using 4 positional sensors (wrist, head, waist, and thigh), they calculated AVC's and trained Bayesian, Random Forest, and SVM classifiers, among several others. Overall, they found Random Forest to be the most accurate at roughly 80 percent. However, when looking at just the left wrist sensor, SVM was more accurate. Since we are testing only wrist-based sensors due to their practicality, this would indicate a combination of pre-processing AVCs then using SVM to classify falls could be a winning ensemble. \cite{gjoreski2016accurately}
+
+    In a different study using similar methods, Hussain et al used a low-pass Butterworth filter to pre-process their data. This is a method of controlling for gravity - given the effects of gravity on movement, it is sometimes necessary to factor it out to understand motion in its raw form. This enables researchers to a subject's effect on its acceleration in space.
+
+    After pre-processing, the researchers compared various classifiers and their efficacy in predicting falls. Again, SVM was found to be the most accurate. This would further indicate the effectiveness of SVMs in detecting falls.
+
 \section{Data}
 \section{Materials and Methods}
 % Methods
