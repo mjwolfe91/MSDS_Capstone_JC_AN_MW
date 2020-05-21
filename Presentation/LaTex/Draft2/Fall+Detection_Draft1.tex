@@ -1,0 +1,193 @@
+% LLNCS class package used for SMU Data Science Review Journal
+\documentclass{llncs}
+
+% Packages to be used in the document
+\usepackage{graphicx} % display figures sample figures - EPS format (preferred), PDF/JPEG also acceptable
+\usepackage{booktabs} % Better horizontal rules in tables
+\usepackage{multirow} % Better combined rows in tables
+\usepackage{xcolor} % Change font color for editing purposes
+\usepackage{hyperref} % Footnote references
+\usepackage{mathtools}
+\graphicspath{ {./images/} }
+
+
+% Paper Title
+\title{\textbf{Signal Processing of Geospatial and Biometric Data from Wearable Devices for Fall Detection}}
+
+% Complete List of Authors with Affiliations
+\author{Joseph Caguioa\inst{1}\and Andy Nguyen\inst{1}\and  Michael J. Wolfe\inst{1}\and Jacquelyn Cheun\inst{1}} %Capstone Advisor: Jacquelyn Cheun
+
+\institute{Master of Science in Data Science, Southern Methodist University, Dallas TX 75275 USA
+	      \email{\{jcaguioa, andynguyen, mwolfe\}@smu.edu} 
+	      % \and Add further credentials/companies for yourselves @Michael/Joseph
+	      }	  
+
+% Begin Document 
+\begin{document}
+% Typeset the title & authors of paper
+\maketitle
+% Reset footnote counter
+%\setcounter{footnote}{0}
+
+% Abstract Typeset
+\begin{abstract}
+In this paper, we present a detection algorithm that accurately differentiates the event of a person falling from normal activities of daily living (ADL). Our algorithm processes signals recorded from accelerometers built into wearable activity monitoring devices such as a Fitbit or Apple Watch that is worn on an individual's wrist. Given the potential danger of injury resulting from a fall, especially for the elderly population whom are more susceptible, an accurate fall detection algorithm could be the precursor to an autonomous emergency alert system that pages paramedics. Immediate medical intervention is critical for survival in urgent situations such as a stroke, cardiac event, or TBI; unfortunately, in many of these cases the individual may be unconscious and unable to intervene on their own behalf. With the advancement of geospatial technology, an algorithm that can distinctly detect the event of a fatal fall can automatically trigger a call for emergency medical services to the exact GPS coordinates of a mobile device or the wearable wrist device itself. We will explore the use of a combination of threshold-based and machine learning-based approaches to develop a refined fall-detection algorithm that builds upon previous research. 
+%  Need to include - two to three sentences are used to state how the problem was solved. A single statement of the main result (singular) is then followed by a single statement of the main conclusion (singular).
+\keywords{fall detection \and activities of daily living (ADL) \and signal processing}
+\end{abstract}
+
+% We most likely need to include a Related Works subsection to discuss previous ideas we might take when building our own algorithm.
+
+
+% Note that paragraphs are created by placing a blank line before the 
+% paragraph within the .tex file just as a blank line exists before the
+% beginning of this comment. That blank line tells LaTeX to treat the 
+% following text as a new paragraph.  No other commands are needed.
+
+
+% Sections are denoted by the use of the \section{Section Name} 
+% command -- where "Section Name" is the name you give to the Section.
+\section{Introduction}
+
+The elderly are most prone to the dangers of falling that may significantly impair their daily lifestyle. Non-fatal falls often result in severe physical injuries such as broken bones, internal tissue damage, and head trauma. However, these falls for the elderly population can also result in persisting psychological fears due to post-traumatic stress and are at the highest risk of a reoccurring incident. The World Health Organization (WHO) report that fatality rates from falls are consistent with risk factors of advanced age and other associated predispositions such as: 1) reduced activity from physical depreciation; 2) chronic underlying medical conditions, including arthritis, neurological diseases, and cardiac diseases; 3) side effects from increased use of prescription medications, that can have compounding effects on the central nervous system;  4) hazardous environments; and 5) substance abuse.\footnote{\url{https://www.who.int/news-room/fact-sheets/detail/falls}} Fall prevention has been investigated as a proposed solution, taking preemptive measures to reduce the number of falls, but accidental falls can not always be averted.  In 2016, approximately 30,000 adults aged 65 years and older died as the result of fatal falls in the United States, the leading cause of injury-related fatalities within this age range. The adjusted-age death rates for this senior population have increased by 31\% from 2007 to 2016, with an estimated 43,000 deaths due to fatal falls in 2030 if these current rates remain stable (Burns \& Kakara, 2018).\cite{burns2018deaths} Autonomous fall detection systems have since been developed with the intention of quickly identifying senior falls to provide immediate interventions if necessary in an effort to combat these increasing mortality rates.
+
+	The critical danger of a fall is being in a "long-lie" condition, in which the person remains on the ground for an extended period unable to help themselves up after a fall (Bagala et al., 2012).\cite{bagala2012evaluation} This may result in severe loss of self-confidence in fortunate situations of non-bodily harm, but in more grave cases potentially result in life-threatening complications such as a traumatic brain injury (TBI) induced by head trauma from the fall. From a survey obtained on 125 subjects ages 65 and older, half of those who suffered a "long-lie" state for over an hour died within 6 months following the first reported fall (Wild et al., 1981).\cite{wild1981dangerous} Fall detection systems help address the concerns of "long-lie" falls by identifying when falls occur and dispatching immediate assistance in order to minimize the period of time individuals remain helpless. The first fall detection system proposed was a personal alarm system (PAS), in which a user-activated device could be worn as a wristband or necklace, but required the user to be conscious after a fall has occurred to press the button and alert an emergency help desk operator (De Backere et al., 2015).\cite{de2015towards} The issue with these initial systems is that they did not consider severe cases in which individuals lose consciousness and are unable to activate the alarm signal for assistance. Since then, novel autonomous fall detection systems have been introduced that do not require a user-activated alert signal; they can be categorized into: camera-based systems, ambient environment sensor-based systems, and wearable sensor-based systems. 
+	
+	Advancements in wearable sensors and system over the past decade has generated interest in using wearable technology to support clinical assessments of patients. Potential applications from these developments have shown promise in early diagnosis of cardiac diseases such as congestive heart failure, prevention of chronic conditions such as diabetes, improvement in clinical management of neurodegenerative conditions such as Parkinson's disease, and the ability to promptly respond to emergency situations such as cardiac arrest or traumatic brain injuries (TBI) (Bonato 2010).\cite{bonato2010wearable} Currently, wearable technologies have been commercialized on the market as smartwatch accessories that include features for activity monitoring, physical fitness tracking, and global positioning systems (GPS). A 2019 survey conducted by the Pew Research Center reports that one in every five Americans (21\%) are estimated to wear a smartwatch or fitness tracker regularly, producing massive amounts of data that can be used for healthcare research.\footnote{\url{https://www.pewresearch.org/fact-tank/2020/01/09/about-one-in-five-americans-use-a-smart-watch-or-fitness-tracker/}} Considering how wide-spread the use of these devices are currently, we believe autonomous fall detection research primarily focused on sensor placements on the wrist will have the most potential as a universal real-world application to address concerns regarding the mortality rates from falls.
+	
+	The Centers for Disease Control and Prevention (CDC) reported in 2014 that falls were the leading cause for TBI, accounting for roughly half (48\%) of TBI-related emergency department visits.\footnote{\url{https://www.cdc.gov/traumaticbraininjury/get_the_facts.html}}. Patients can suffer extended periods of unconsciousness in a critical "long-lie" condition in urgent cases of traumatic brain injuries, unable to help themselves or request for immediate assistance. We propose a novel autonomous fall-detection system using algorithms trained on data extracted from wireless accelerometer and gyroscope wrist sensors as a potential solution to address these concerns. When our algorithm detects a fall and the user is unable to confirm consciousness through the wrist device, it could trigger an alert to dispatch local paramedics to the device's exact GPS location for an emergency evaluation and immediate medical intervention. The algorithm is tasked with a binary classification that will discriminate actual falls from typical activities of daily living: bathing, ambulatory, transferring, toileting, eating, and dressing. 
+	
+% Still needs a formal hypothesis statement. We will figure this out once we actual work the the data to build our model. Idea: We can hypothesize which models we think are the best and why?
+	Prior research on fall-detection algorithms using triaxial accelerometers has shown that applying identified fall events from a simple threshold model to a Hidden Markov Model produced the most accurate results and was a more efficient algorithm that required less computational resources (Lim et al., 2014).\cite{lim2014fall} We will analyze how competing algorithms perform when combining a simple threshold-based model to detect potential falls with different machine learning-based models. We are specifically interested in observing how linear discriminant analysis (LDA), support vector machines (SVM), naïve Bayesian (NB), decision trees (DT), and random forests (RF) compare on a binary-classification task that differentiates a fall from an ADL. We will compare these competing models based on their classification accuracy, specificity, sensitivity, and precision using ROC-AUC curve to visualize the results. In order to accurately discriminate ADLs, we will consider clustering techniques to analyze patterns in accelerometer and gyroscope data from wrist sensors to understand how different classes of daily living activities are identified in our algorithm. The goal of our research is to present an optimized fall-detection algorithm based on a simple threshold and machine learning models that can be implemented into wearable wrist devices such as smartwatches. 
+	%Cluster the data by ADL to find patterns in accelerometer and gyroscope data
+	%PCA on accelerometer and gyroscope data to reduce data dimensionality. The data will have data for those features in 3 dimensions (x, y, z) and make intuitive sense to be reduced into just one accelerometer and one gyroscope feature.
+	
+% Results Summary
+% Conclusion Summary
+	
+	The remainder of this paper is organized into the following sections. Section 2 will discuss related studies that have guided our work and analyzed the efficacy of previous implementations of autonomous fall-detection systems. Section 3 will discuss how the data was collected along with its structures and attributes. Section 4 discusses the different approaches utilized in our analysis and provides a high-level overview of the machine learning concepts applied in our algorithms. Section 5 will present our findings along with relevant visualizations to explain our results. Section 6 will discuss the results of our research and a comparative analysis of the competing models. Section 7 will summarize our main conclusions and potential ideas to refine our proposed solution. Section 8 will wrap up our analysis with ethical considerations of handling personal health data recorded from wearable wrist devices.
+
+	
+% Ethics
+	% Testing elderly patients: the experiments and activity are more taxing for them compared to relatively younger individuals. Could be a possible explanation for why datasets do not heavily test on that specific age group despite that being the targeted population for applicable use.
+	% Privacy concerns with sharing constant GPS location
+	% False positives can amount to increased fall-related costs (i.e. non-essential dispatch of paramedics)
+
+% The average life expectancy for U.S. citizens estimated to be 78.6 years of age. \footnote{\url{https://www.cdc.gov/nchs/fastats/life-expectancy.htm}} 
+	
+\section{Related Work} 
+
+    Fall detection is a rich field with considerable depth and breadth. Much work has been done on all levels, from algorithms to detect falls from certain positions or heights to simply studying and defining movement in general. One of the most prominent studies for our purposes is the Burns study on fall-related deaths in the elderly. \cite{burns2018deaths} This is the primary impetus for our project - fall-related deaths are common and preventable with timely intervention.
+    
+    In \cite{noury2007principles}, fall scenarios are categorized for evaluation purposes: namely forward, backward, and lateral. Fall-like scenarios such as syncope, where a fainted individual slips down a wall into a sitting position, are also mentioned. Such categorizations are later used in many studies for fall events. 
+    
+    Methods that use accelerometers to detect a fall typically analyze data about a person's acceleration before, during, and after the event. Terminology varies between studies, but most describe the segmentation in the following chronological order: a normal ADL period succeeded by a sudden spike in acceleration within a short time window, followed by a sudden deceleration on impact, followed by an extended period of no acceleration if the person is incapable of recovering or calling for assistance themselves. Events with slower falls or multiple impacts may have slightly different profiles of acceleration over time \cite{kangas2009sensitivity}.
+    
+    In our literature review, we discovered that many fall detection studies had implemented similar pre-processing of their data. By combining accelerometer data with sensor metrics, researchers created Acceleration Vector Changes. This is a vector of acceleration changes by sensor, indicating the subject's motion in a given period of time. This can be tested in a variety of methods, ranging from a simple threshold analysis to training a classification algorithm.
+    
+    Gjoreski's various studies use this method. For example, their early work compared different classifiers and their effectiveness in detecting falls. Using 4 positional sensors (wrist, head, waist, and thigh), they calculated AVC's and trained Bayesian, Random Forest, and SVM classifiers, among several others. Overall, they found Random Forest to be the most accurate at roughly 80 percent. However, when looking at just the left wrist sensor, SVM was more accurate. Since we are testing only wrist-based sensors due to their practicality, this would indicate a combination of pre-processing AVCs then using SVM to classify falls could be a winning ensemble. \cite{gjoreski2016accurately}
+    
+    In a different study using similar methods, Hussain et al used a low-pass Butterworth filter to pre-process their data. This is a method of controlling for gravity - given the effects of gravity on movement, it is sometimes necessary to factor it out to understand motion in its raw form. This enables researchers to a subject's effect on its acceleration in space.
+    
+    After pre-processing, the researchers compared various classifiers and their efficacy in predicting falls. Again, SVM was found to be the most accurate. This would further indicate the effectiveness of SVMs in detecting falls. \cite{hussainelderly2019}
+    
+    Aside from data processing techniques, another widely explored field in fall detection is the number, placement, and type of sensor used to detect falls. As mentioned above, Gjoreski's study uses sensors in the waist, thigh, wrist, and head. Each sensor is found to have different levels of accuracy depending on which model was uses. For example, Random Forest on the head-mounted sensor was the most accurate of all models and sensors. However, using SVM the left-wrist-based sensor produced a fairly accurate model. \cite{gjoreski2016accurately} For our purposes we will focuse on a sensor based on the left wrist. From a practicality standpoint this is the best approach. Popular products today equipped with fall detection technology are generally smart watches, worn on the left wrist. Given that our algorithm is likely to see broader adoption if geared towards smart watches, we will focus on methods that are based on these types of sensors.
+     
+\section{Data}
+    
+    Acceleration plots
+    
+    
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S1 - Activity 1.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S1 - Activity 2.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S1 - Activity 3.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S1 - Activity 4.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S1 - Activity 5.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S1 - Activity 6.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S1 - Activity 7.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S1 - Activity 8.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S1 - Activity 9.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S1 - Activity 10.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S1 - Activity 11.png}
+    
+    
+    Angular Velocity
+    
+    
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S2 - Activity 1.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S2 - Activity 2.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S2 - Activity 3.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S2 - Activity 4.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S2 - Activity 5.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S2 - Activity 6.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S2 - Activity 7.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S2 - Activity 8.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S2 - Activity 9.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S2 - Activity 10.png}
+    \includegraphics[width=3cm, height=4cm]{Draft1/images/S2 - Activity 11.png}
+    
+\section{Materials and Methods}
+% Methods
+	Detecting falls presents a myriad of technical, logistical, and practical challenges that we will need to address. From a modeling standpoint, an ADL-based dataset will have a very unbalanced response. This will also include a number of false flag activities, such as sitting or laying down. Additionally, falls can occur from multiple positions, such as standing, sitting, or many positions in between. This creates potential for both Type 1 and Type 2 error, and our model will need to be robust to both.
+    
+    ADLs encompass a wide variety of activities, categorized into six different areas: bathing, ambulatory, transferring, toileting, eating, and dressing. These types of activity will inform our majority response and will be highly dominant in the data. Right away we can tell several of these pose a risk for falls, such as ambulatory or transferring. Transferring is defined as transitory periods from one activity to another, such as getting out of bed, sitting down to eat, getting in and out of chairs or vehicles, or going to sleep at night. Our model would need to know the difference between a transferal and a fall. This could be done by testing accelerometer data against the position in space, and check if the transition was the appropriate speed. 
+    
+    This solution would not encompass all falls, and could ignore some important fall patterns. One common fall behavior, particularly in senior populations, is fainting during toileting. This can present an unexpected challenge - falls from a variety of different positions. If our model were only to expect falls to present a certain change in position at a certain rate, it would be unable to detect the aforementioned fall during toileting. The idea that not all falls are created equal will inform our model so that it can handle a variety of scenarios.
+    
+    As mentioned before, this data will have a heavily unbalanced response, so appropriate measures will need to be taken to address this, such as downsampling and stratified cross validation. One possible method of addressing many of the previous challenges as well as dealing with the unbalanced response would be training the model for anomaly detection. This would require normalizing the variance across all ADLs, then treating that variance as the positive class of a binary response. The amount of data we have to train a positive response will be more than enough for an anomaly detection architecture.
+    
+   	% Methods - Paragraph 10 Defining the Fall
+	The first step is determining how we define a fall in the context of our algorithm. Fortunately, science defines this for us fairly succinctly in Newtonian physics, where any object upon which gravity is the only actor is said to be in free fall. A fall could be analyzed in much the same way - a person is said to be falling when gravity has more control of their movement than they or another person or device may have at that moment.
+	
+	The question then becomes how we define a fall in the context of the algorithm. We already mentioned sensors and accelerometers as our tools of measuring a person's ADL and current state. Principle components or quadratic discriminants could be a simple method of measuring changes in state. Since we are not interested in the exact measurements in space - only types of changes - PCA or QDA could be a simple and efficient way of detecting changes. The challenge then becomes finding the range of the minority response.
+	
+	Since there will be multiple types of falls, as well as falls that appear similar to other ADLs, establishing a threshold for falls - anomalies in this context - will be critical to this algorithm being successful. It is not reasonable to expect a small amount of anomalies to be sufficient in detecting any type of fall, nor all types. Therefore, we plan to leverage methods such as reinforcement learning to solve this problem.
+	% How will we define the threshold value for a fall?
+		% picture a physics problem: *HP means hyper parameter*
+			% an object in free fall [normalForce_up, gravitationalForce_down (HP: weight)]
+			% an object at rest on the surface [dragForce_up (HP: dragCoefficient_up) , gravitationalForce_down (HP_constant: 9.8m/s^2]
+	
+	At the crux of fall detection is striking a balance between exploiting the known (leaning on the knowledge of past falls) and exploring the unknown (discerning new falls and types of falls). Reinforcement learning is best suited to this task, as it will be key for this algorithm to seek to learn from past errors, both Type I and Type II, and reduce error going forward.
+	
+	This has proven to be effective in past experiments with movement. Although there have been no uses in fall detection that we could find, researchers at the University of Porto have tested reinforcement learning in teaching robots to move in quicker, more efficient ways. By using a policy reuse algorithm, they were able to significantly improve the robot's gait when compared to other gait-improvement algorithms (Garcia et al., 2020).\cite{garcia2020teaching}
+	
+	Policy reuse could be particularly useful in our case. By maximizing the reward of our decision process, we can ensure our algorithm is more accurate with the more decision points we create. The challenge with this, again, is the unbalanced response. Without a handful of falls to train on, we still might not maximize this function. One way to counteract this is to introduce Monte Carlo methods. Even if our algorithm were to go into long periods of majority state, a Monte Carlo method would ensure continuous evaluation to make sure policies are improved.
+	
+	All that said about falls, we need to give considerable thought to our majority response - ADLs. As described above, ADLs in their simplest form are motions of day-to-day life. While most movement scientists describe them in the 6 categories mentioned previously, there is some disagreement on that point. Many scientists do not feel that those 6 categories encompass the range of activities that should be included in the ADL category.
+	
+	Researchers in Switzerland have proposed creating 3 very broad subcategories of ADLs based on their own fall detection research: basic movements, standard movements requiring some mobility, and sporting movements (Casilari et al., 2017).\cite{casilari2017analysis} These ranges capture a broader population of ADLs and could serve us better in identifying our majority response. Additionally, since their work was based on more able-bodied adults, it would help us in crafting a more practically applicable model for wearable devices.
+	
+	Speaking of practical significance, our choice to focus on wrist-based sensors was driven by a desire to match commonly preferred products on the market today, like Fitbit, Garmin, and Apple Watch. This choice brings its own set of benefits and challenges. Clear benefits include developing an algorithm that is more beneficial to a broader population. Most individuals concerned with falls will not want to wear sensors on their hips or heads, or multiple sensors, so a product that works only on the wrist will do the most good for the most people. 
+	
+	Unfortunately, some research has shown wrist sensors to be unreliable. Researchers testing fall detection reliability have found that false positive rates are high when using a single wrist sensor.\cite{gjoreski2016accurately} Generally, torso, waist and head based sensors have proven to be more effective in detecting falls, but in this study, wrist-based sensors were still able to detect faster falls with some accuracy. While the waist intuitively makes sense as the optimal placement being the site closest to the human anatomy's center of gravity, placement at the head has shown to produce superior impact detection sensitivity. Triaxial accelerometer data from both sites produced efficient fall detection algorithms with a sensitivity around 97\% and specificity of 100\%, even with simple threshold-based algorithms.\cite{kangas2008comparison} Due to the limitations with comfortability and daily use of sensor placements at the head and waist, we will primarily focus on wrist sensors for its minimal invasiveness and potential for daily application. Additionally, wrist sensors expands this application beyond the targeted elderly population because wrist-worn devices can be accessorized by individuals in any age group and offer a safety buffer in the event of an accident.
+	
+	Fortunately, methods have been developed to account for this accuracy issue with wrist-based sensors. Researchers tested four different hand-based ADLs - waving, knocking, clapping, and exercise - that frequently are mistaken for falls. Using ensemble stacked autoencoders and one-class classification based on the convex hull (ESAEs-OCCCH), the researchers were able to generate a novel form of fall detection. This technique could be incorporated into our model to produce a more reliable metric from our sensors (Chen et al., 2019). \cite{chen2019method}
+	
+	
+
+
+\section{Results}
+\section{Discussion}
+\section{Conclusion}
+
+\section{Ethics}
+
+     One major ethical consideration, both within this analysis and others on fall detection, is bias within the data. Pre-existing publicly available datasets often contain data sourced from healthy adults who predominantly skew younger and male (Casilari et al., 2017).\cite{casilari2017analysis} Studies that generate their own data frequently recruit people of similar demographics because of the health and safety concerns posed by attempting to source data from the elderly \cite{gjoreski2016accurately}. Any data that is generated by older adults is often limited to ADLs as opposed to falls. Although volunteers are often coached to simulate fall behavior in a similar fashion to the elderly, factors like predefined movements, test environments that do not well approximate where the elderly are most likely to fall, and the presence of safety precautions like mattresses could all result in simulated fall data that does not actually match the reality (Casilari et al., 2017).\cite{casilari2017analysis} Kangas et al. demonstrate that the profiles for a small number of real-life falls look similar to those of simulated ones.\cite{kangas2008comparison} However, we caution against assuming this extends to other simulated data and recommend more investigation into the possible influence of demographic bias and safety measures.
+	Another potential ethical consideration is privacy. In a similar fashion to how personalized medicine tailors to individual patients, a user-centric model that trains on the wearer's baseline ADL movements has been suggested to perform better than a generalized one (Villar et al., 2019).\cite{villar2019online} Manufacturers of wrist wearables could allow users to opt-in to providing their real-life ADL data to refine the generalized model that the user-centric model works with. However, this introduces realistic concerns over whether user information is properly removed or anonymized in the event of data breaches.
+
+
+
+
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted according to alphabetical 
+% and formatted in the correct style.
+%
+
+
+ \bibliography{Fall+Detection_Draft1}{}
+ \bibliographystyle{splncs04}
+
+% End the Document
+\end{document}
