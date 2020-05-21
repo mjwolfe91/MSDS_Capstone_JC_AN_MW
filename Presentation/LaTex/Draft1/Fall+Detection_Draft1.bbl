@@ -1,0 +1,73 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{bagala2012evaluation}
+Bagala, F., Becker, C., Cappello, A., Chiari, L., Aminian, K., Hausdorff, J.M.,
+  Zijlstra, W., Klenk, J.: Evaluation of accelerometer-based fall detection
+  algorithms on real-world falls. PloS one  \textbf{7}(5) (2012)
+
+\bibitem{bonato2010wearable}
+Bonato, P.: Wearable sensors and systems. IEEE Engineering in Medicine and
+  Biology Magazine  \textbf{29}(3),  25--36 (2010)
+
+\bibitem{burns2018deaths}
+Burns, E., Kakara, R.: Deaths from falls among persons aged$\geq$ 65
+  years—united states, 2007--2016. Morbidity and Mortality Weekly Report
+  \textbf{67}(18), ~509 (2018)
+
+\bibitem{casilari2017analysis}
+Casilari, E., Santonoyo-Ramón, J.A., Cano-García, J.M.: Analysis of public
+  datasets for wearable fall detection systems. Sensors  \textbf{17}(7) (2017)
+
+\bibitem{chen2019method}
+Chen, L., Li, R., Zhang, H., Tian, L., Chen, N.: Intelligent fall detection
+  method based on accelerometer data from a wrist-worn smart watch. Measurement
+   \textbf{140},  215--226 (2019)
+
+\bibitem{de2015towards}
+De~Backere, F., Ongenae, F., Van Den~Abeele, F., Nelis, J., Bonte, P., Clement,
+  E., Philpott, M., Hoebeke, J., Verstichel, S., Ackaert, A., et~al.: Towards a
+  social and context-aware multi-sensor fall detection and risk assessment
+  platform. Computers in biology and medicine  \textbf{64},  307--320 (2015)
+
+\bibitem{garcia2020teaching}
+Garc{\'\i}a, J., Shafie, D.: Teaching a humanoid robot to walk faster through
+  safe reinforcement learning. Engineering Applications of Artificial
+  Intelligence  \textbf{88},  103360 (2020)
+
+\bibitem{gjoreski2016accurately}
+Gjoreski, M., Gjoreski, H., Lu{\v{s}}trek, M., Gams, M.: How accurately can
+  your wrist device recognize daily activities and detect falls? Sensors
+  \textbf{16}(6), ~800 (2016)
+
+\bibitem{noury2007principles}
+IEEE Engineering in Medicine and Biology Society: Fall detection--principles
+  and methods., vol.~2007 (2007)
+
+\bibitem{kangas2008comparison}
+Kangas, M., Konttila, A., Lindgren, P., Winblad, I., J{\"a}ms{\"a}, T.:
+  Comparison of low-complexity fall detection algorithms for body attached
+  accelerometers. Gait \& posture  \textbf{28}(2),  285--291 (2008)
+
+\bibitem{kangas2009sensitivity}
+Kangas, M., Vikman, I., Wiklander, J., Lindgren, P., Nyberg, L., Jämsä, T.:
+  Sensitivity and specificity of fall detection in people aged 40 years and
+  over. Gait \& Posture  \textbf{29}(4),  571--574 (2009)
+
+\bibitem{lim2014fall}
+Lim, D., Park, C., Kim, N.H., Kim, S.H., Yu, Y.S.: Fall-detection algorithm
+  using 3-axis acceleration: combination with simple threshold and hidden
+  markov model. Journal of Applied Mathematics  \textbf{2014} (2014)
+
+\bibitem{villar2019online}
+Villar, J., Cal, E., Fañez, M., González, V., Sedano, J.: User-centered fall
+  detection using supervised, on-line learning and transfer learning. Progress
+  in Artificial Intelligence  \textbf{8}(4),  453--474 (2019)
+
+\bibitem{wild1981dangerous}
+Wild, D., Nayak, U., Isaacs, B.: How dangerous are falls in old people at home?
+  Br Med J (Clin Res Ed)  \textbf{282}(6260),  266--268 (1981)
+
+\end{thebibliography}

@@ -59,6 +59,7 @@ The elderly are most prone to the dangers of falling that may significantly impa
 	
 % Still needs a formal hypothesis statement. We will figure this out once we actual work the the data to build our model. Idea: We can hypothesize which models we think are the best and why?
 	Prior research on fall-detection algorithms using triaxial accelerometers has shown that applying identified fall events from a simple threshold model to a Hidden Markov Model produced the most accurate results and was a more efficient algorithm that required less computational resources (Lim et al., 2014).\cite{lim2014fall} We will analyze how competing algorithms perform when combining a simple threshold-based model to detect potential falls with different machine learning-based models. We are specifically interested in observing how linear discriminant analysis (LDA), support vector machines (SVM), naïve Bayesian (NB), decision trees (DT), and random forests (RF) compare on a binary-classification task that differentiates a fall from an ADL. We will compare these competing models based on their classification accuracy, specificity, sensitivity, and precision using ROC-AUC curve to visualize the results. In order to accurately discriminate ADLs, we will consider clustering techniques to analyze patterns in accelerometer and gyroscope data from wrist sensors to understand how different classes of daily living activities are identified in our algorithm. The goal of our research is to present an optimized fall-detection algorithm based on a simple threshold and machine learning models that can be implemented into wearable wrist devices such as smartwatches. 
+	
 	%Cluster the data by ADL to find patterns in accelerometer and gyroscope data
 	%PCA on accelerometer and gyroscope data to reduce data dimensionality. The data will have data for those features in 3 dimensions (x, y, z) and make intuitive sense to be reduced into just one accelerometer and one gyroscope feature.
 	
@@ -89,7 +90,7 @@ The elderly are most prone to the dangers of falling that may significantly impa
     
     In a different study using similar methods, Hussain et al used a low-pass Butterworth filter to pre-process their data. This is a method of controlling for gravity - given the effects of gravity on movement, it is sometimes necessary to factor it out to understand motion in its raw form. This enables researchers to a subject's effect on its acceleration in space.
     
-    After pre-processing, the researchers compared various classifiers and their efficacy in predicting falls. Again, SVM was found to be the most accurate. This would further indicate the effectiveness of SVMs in detecting falls. \cite{hussainelderly2019}
+    After pre-processing, the researchers compared various classifiers and their efficacy in predicting falls. Again, SVM was found to be the most accurate. This would further indicate the effectiveness of SVMs in detecting falls.
      
 \section{Data}
 \section{Materials and Methods}
