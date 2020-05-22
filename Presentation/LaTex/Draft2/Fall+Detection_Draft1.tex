@@ -94,6 +94,60 @@ The elderly are most prone to the dangers of falling that may significantly impa
     Aside from data processing techniques, another widely explored field in fall detection is the number, placement, and type of sensor used to detect falls. As mentioned above, Gjoreski's study uses sensors in the waist, thigh, wrist, and head. Each sensor is found to have different levels of accuracy depending on which model was uses. For example, Random Forest on the head-mounted sensor was the most accurate of all models and sensors. However, using SVM the left-wrist-based sensor produced a fairly accurate model. \cite{gjoreski2016accurately} For our purposes we will focuse on a sensor based on the left wrist. From a practicality standpoint this is the best approach. Popular products today equipped with fall detection technology are generally smart watches, worn on the left wrist. Given that our algorithm is likely to see broader adoption if geared towards smart watches, we will focus on methods that are based on these types of sensors.
      
 \section{Data}
+
+Subject 3 is the only left-handed participant in the study.
+
+\begin{table}
+\caption{Description of Participating Subjects.}\label{table1}
+\begin{center}
+\begin{tabular}{lclclc|c|c|}
+\toprule
+Subject ID & Age & Height (m) & Weight (kg) & Gender\\
+\midrule
+1 &  18 & 1.70 & 99 & Male\\
+2 &  20 & 1.70 & 58 & Male\\
+3 & 19 & 1.57 & 54 & Female\\
+4 & 20 & 1.62 & 71 & Female\\
+5 & 21 & 1.71 & 69 & Male\\
+6 & 22 & 1.62 & 68 & Male\\
+7 & 24 & 1.74 & 70 & Male\\
+8 & 23 & 1.75 & 88 & Male\\
+9 & 23 & 1.68 & 70 & Female\\
+10 & 19 & 1.69 & 63 & Male\\
+11 & 20 & 1.65 & 73 & Female\\
+12 & 19 & 1.60 & 53 & Female\\
+13 & 20 & 1.64 & 55 & Male\\
+14 & 19 & 1.70 & 73 & Female\\
+15 & 21 & 1.57 & 56 & Female\\
+16 & 20 & 1.70 & 62 & Male\\
+17 & 20 & 1.66 & 54 & Female\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+    
+\begin{table}
+\caption{Description of Activities Performed by Each Subject.}\label{table2}
+\begin{center}
+\begin{tabular}{lclclc|}
+\toprule
+Activity ID & Description & Duration (s)\\
+\midrule
+1 &  Falling forward on hands & 10\\
+2 &  Falling forward on knees & 10\\
+3 & Falling backwards & 10\\
+4 & Falling sidewards & 10\\
+5 & Falling from seated position on chair & 10\\
+6 & Walking & 60\\
+7 & Standing & 60\\
+8 & Sitting & 60\\
+9 & Picking an object up & 10\\
+10 & Jumping & 30\\
+11 & Lying & 60\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
     
     Acceleration plots
     
