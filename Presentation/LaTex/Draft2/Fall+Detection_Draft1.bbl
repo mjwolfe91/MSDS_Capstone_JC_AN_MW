@@ -66,6 +66,12 @@ Lim, D., Park, C., Kim, N.H., Kim, S.H., Yu, Y.S.: Fall-detection algorithm
   using 3-axis acceleration: combination with simple threshold and hidden
   markov model. Journal of Applied Mathematics  \textbf{2014} (2014)
 
+\bibitem{martinez2019up}
+Mart{\'\i}nez-Villase{\~n}or, L., Ponce, H., Brieva, J., Moya-Albor, E.,
+  N{\'u}{\~n}ez-Mart{\'\i}nez, J., Pe{\~n}afort-Asturiano, C.: Up-fall
+  detection dataset: A multimodal approach. Sensors  \textbf{19}(9), ~1988
+  (2019)
+
 \bibitem{villar2019online}
 Villar, J., Cal, E., Fañez, M., González, V., Sedano, J.: User-centered fall
   detection using supervised, on-line learning and transfer learning. Progress

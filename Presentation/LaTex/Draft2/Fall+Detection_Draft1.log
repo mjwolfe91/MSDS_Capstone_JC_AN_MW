@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 MAY 2020 17:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 MAY 2020 23:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -405,20 +405,20 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 ) (./Fall+Detection_Draft1.aux)
 \openout1 = `Fall+Detection_Draft1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -451,7 +451,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring OFF on input line 26.
+Package hyperref Info: Link coloring OFF on input line 25.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -461,33 +461,33 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count154
 )
-LaTeX Info: Redefining \ref on input line 26.
-LaTeX Info: Redefining \pageref on input line 26.
-LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \nameref on input line 25.
 
 (./Fall+Detection_Draft1.out) (./Fall+Detection_Draft1.out)
 \@outlinefile=\write3
 \openout3 = `Fall+Detection_Draft1.out'.
 
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 31.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 30.
 
-LaTeX Font Info:    No file OMScmtt.fd. on input line 31.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 30.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 31.
+(Font)              for symbol `textbraceleft' on input line 30.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 36.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 35.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 35.
  [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 56--56
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
  [][][][]$\OT1/cmtt/m/n/9 https : / / www . pewresearch . org / fact-[]tank / 2
 020 / 01 / 09 /
  []
@@ -496,241 +496,110 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--56
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-[3] [4] [5]
+[3] [4]
 
-LaTeX Warning: File `images/S1 - Activity 1.png' not found on input line 155.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/S1 - Activity 1.png, id=86, 403.2666pt x 327.3831pt>
-File: images/S1 - Activity 1.png Graphic file (type png)
-<use images/S1 - Activity 1.png>
-Package pdftex.def Info: images/S1 - Activity 1.png  used on input line 155.
-(pdftex.def)             Requested size: 85.35919pt x 113.8115pt.
-
-LaTeX Warning: File `images/S1 - Activity 2.png' not found on input line 156.
-
-<images/S1 - Activity 2.png, id=88, 412.6617pt x 327.3831pt>
-File: images/S1 - Activity 2.png Graphic file (type png)
-<use images/S1 - Activity 2.png>
-Package pdftex.def Info: images/S1 - Activity 2.png  used on input line 156.
-(pdftex.def)             Requested size: 85.3581pt x 113.8115pt.
-
-LaTeX Warning: File `images/S1 - Activity 3.png' not found on input line 157.
-
-<images/S1 - Activity 3.png, id=89, 418.4433pt x 327.3831pt>
-File: images/S1 - Activity 3.png Graphic file (type png)
-<use images/S1 - Activity 3.png>
-Package pdftex.def Info: images/S1 - Activity 3.png  used on input line 157.
-(pdftex.def)             Requested size: 85.35364pt x 113.8115pt.
-
-LaTeX Warning: File `images/S1 - Activity 4.png' not found on input line 158.
-
-<images/S1 - Activity 4.png, id=90, 406.8801pt x 327.3831pt>
-File: images/S1 - Activity 4.png Graphic file (type png)
-<use images/S1 - Activity 4.png>
-Package pdftex.def Info: images/S1 - Activity 4.png  used on input line 158.
-(pdftex.def)             Requested size: 85.3542pt x 113.8115pt.
-
-LaTeX Warning: File `images/S1 - Activity 5.png' not found on input line 159.
-
-<images/S1 - Activity 5.png, id=91, 409.7709pt x 327.3831pt>
-File: images/S1 - Activity 5.png Graphic file (type png)
-<use images/S1 - Activity 5.png>
-Package pdftex.def Info: images/S1 - Activity 5.png  used on input line 159.
-(pdftex.def)             Requested size: 85.35413pt x 113.8115pt.
-
-LaTeX Warning: File `images/S1 - Activity 6.png' not found on input line 160.
-
-<images/S1 - Activity 6.png, id=92, 409.7709pt x 327.3831pt>
-File: images/S1 - Activity 6.png Graphic file (type png)
-<use images/S1 - Activity 6.png>
-Package pdftex.def Info: images/S1 - Activity 6.png  used on input line 160.
-(pdftex.def)             Requested size: 85.35413pt x 113.8115pt.
-
-LaTeX Warning: File `images/S1 - Activity 7.png' not found on input line 161.
-
-<images/S1 - Activity 7.png, id=93, 409.7709pt x 327.3831pt>
-File: images/S1 - Activity 7.png Graphic file (type png)
-<use images/S1 - Activity 7.png>
-Package pdftex.def Info: images/S1 - Activity 7.png  used on input line 161.
-(pdftex.def)             Requested size: 85.35413pt x 113.8115pt.
-
-LaTeX Warning: File `images/S1 - Activity 8.png' not found on input line 162.
-
-<images/S1 - Activity 8.png, id=94, 409.7709pt x 327.3831pt>
-File: images/S1 - Activity 8.png Graphic file (type png)
-<use images/S1 - Activity 8.png>
-Package pdftex.def Info: images/S1 - Activity 8.png  used on input line 162.
-(pdftex.def)             Requested size: 85.35413pt x 113.8115pt.
-
-LaTeX Warning: File `images/S1 - Activity 9.png' not found on input line 163.
-
-<images/S1 - Activity 9.png, id=95, 409.7709pt x 327.3831pt>
-File: images/S1 - Activity 9.png Graphic file (type png)
-<use images/S1 - Activity 9.png>
-Package pdftex.def Info: images/S1 - Activity 9.png  used on input line 163.
-(pdftex.def)             Requested size: 85.35413pt x 113.8115pt.
-
-LaTeX Warning: File `images/S1 - Activity 10.png' not found on input line 164.
-
-<images/S1 - Activity 10.png, id=96, 400.3758pt x 327.3831pt>
-File: images/S1 - Activity 10.png Graphic file (type png)
-<use images/S1 - Activity 10.png>
-Package pdftex.def Info: images/S1 - Activity 10.png  used on input line 164.
-(pdftex.def)             Requested size: 85.35822pt x 113.8115pt.
-
-LaTeX Warning: File `images/S1 - Activity 11.png' not found on input line 165.
-
-<images/S1 - Activity 11.png, id=97, 409.7709pt x 327.3831pt>
-File: images/S1 - Activity 11.png Graphic file (type png)
-<use images/S1 - Activity 11.png>
-Package pdftex.def Info: images/S1 - Activity 11.png  used on input line 165.
-(pdftex.def)             Requested size: 85.35413pt x 113.8115pt.
-
-Overfull \hbox (4.69966pt too wide) in paragraph at lines 155--166
-\OT1/cmr/m/n/10 ity 2.png [] - Ac-tiv-ity 3.png - Ac-tiv-ity 3.png []
- []
-
-
+[5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./images/S1 - Activity 1.png> <./images/S1 - Activity 2.png> <./images/S1 
-- Activity 3.png>]
+ [6]
+<images/Acceleration/S1_Activity1.png, id=96, 403.2666pt x 327.3831pt>
+File: images/Acceleration/S1_Activity1.png Graphic file (type png)
+<use images/Acceleration/S1_Activity1.png>
+Package pdftex.def Info: images/Acceleration/S1_Activity1.png  used on input li
+ne 159.
+(pdftex.def)             Requested size: 142.26532pt x 113.8115pt.
+<images/AngularVelocity/S1_Activity1.png, id=98, 416.2752pt x 327.3831pt>
+File: images/AngularVelocity/S1_Activity1.png Graphic file (type png)
+<use images/AngularVelocity/S1_Activity1.png>
+Package pdftex.def Info: images/AngularVelocity/S1_Activity1.png  used on input
+ line 159.
+(pdftex.def)             Requested size: 142.26215pt x 113.8115pt.
+<images/Acceleration/S1_Activity2.png, id=99, 412.6617pt x 327.3831pt>
+File: images/Acceleration/S1_Activity2.png Graphic file (type png)
+<use images/Acceleration/S1_Activity2.png>
+Package pdftex.def Info: images/Acceleration/S1_Activity2.png  used on input li
+ne 161.
+(pdftex.def)             Requested size: 142.26138pt x 113.8115pt.
+<images/AngularVelocity/S1_Activity2.png, id=100, 416.2752pt x 327.3831pt>
+File: images/AngularVelocity/S1_Activity2.png Graphic file (type png)
+<use images/AngularVelocity/S1_Activity2.png>
+Package pdftex.def Info: images/AngularVelocity/S1_Activity2.png  used on input
+ line 161.
+(pdftex.def)             Requested size: 142.26215pt x 113.8115pt.
+<images/Acceleration/S1_Activity3.png, id=101, 418.4433pt x 327.3831pt>
+File: images/Acceleration/S1_Activity3.png Graphic file (type png)
+<use images/Acceleration/S1_Activity3.png>
+Package pdftex.def Info: images/Acceleration/S1_Activity3.png  used on input li
+ne 163.
+(pdftex.def)             Requested size: 142.26245pt x 113.8115pt.
+<images/AngularVelocity/S1_Activity3.png, id=102, 421.3341pt x 327.3831pt>
+File: images/AngularVelocity/S1_Activity3.png Graphic file (type png)
+<use images/AngularVelocity/S1_Activity3.png>
+Package pdftex.def Info: images/AngularVelocity/S1_Activity3.png  used on input
+ line 163.
+(pdftex.def)             Requested size: 142.26163pt x 113.8115pt.
+<images/Acceleration/S1_Activity4.png, id=103, 406.8801pt x 327.3831pt>
+File: images/Acceleration/S1_Activity4.png Graphic file (type png)
+<use images/Acceleration/S1_Activity4.png>
+Package pdftex.def Info: images/Acceleration/S1_Activity4.png  used on input li
+ne 165.
+(pdftex.def)             Requested size: 142.26115pt x 113.8115pt.
+<images/AngularVelocity/S1_Activity4.png, id=104, 419.8887pt x 327.3831pt>
+File: images/AngularVelocity/S1_Activity4.png Graphic file (type png)
+<use images/AngularVelocity/S1_Activity4.png>
+Package pdftex.def Info: images/AngularVelocity/S1_Activity4.png  used on input
+ line 165.
+(pdftex.def)             Requested size: 142.26692pt x 113.8115pt.
+<images/Acceleration/S1_Activity5.png, id=105, 409.7709pt x 327.3831pt>
+File: images/Acceleration/S1_Activity5.png Graphic file (type png)
+<use images/Acceleration/S1_Activity5.png>
+Package pdftex.def Info: images/Acceleration/S1_Activity5.png  used on input li
+ne 167.
+(pdftex.def)             Requested size: 142.26523pt x 113.8115pt.
+<images/AngularVelocity/S1_Activity5.png, id=106, 412.6617pt x 327.3831pt>
+File: images/AngularVelocity/S1_Activity5.png Graphic file (type png)
+<use images/AngularVelocity/S1_Activity5.png>
+Package pdftex.def Info: images/AngularVelocity/S1_Activity5.png  used on input
+ line 167.
+(pdftex.def)             Requested size: 142.26138pt x 113.8115pt.
+
+
+LaTeX Warning: Float too large for page by 107.64406pt on input line 171.
+
+[7] [8 <./images/Acceleration/S1_Activity1.png> <./images/AngularVelocity/S1_Ac
+tivity1.png> <./images/Acceleration/S1_Activity2.png> <./images/AngularVelocity
+/S1_Activity2.png> <./images/Acceleration/S1_Activity3.png> <./images/AngularVe
+locity/S1_Activity3.png> <./images/Acceleration/S1_Activity4.png> <./images/Ang
+ularVelocity/S1_Activity4.png> <./images/Acceleration/S1_Activity5.png> <./imag
+es/AngularVelocity/S1_Activity5.png>] [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./images/S1 - Activity 4.png> <./images/S1 - Activity 5.png> <./images/S1 
-- Activity 6.png> <./images/S1 - Activity 7.png> <./images/S1 - Activity 8.png>
- <./images/S1 - Activity 9.png>]
-
-LaTeX Warning: File `images/S2 - Activity 1.png' not found on input line 171.
-
-<images/S2 - Activity 1.png, id=117, 412.6617pt x 327.3831pt>
-File: images/S2 - Activity 1.png Graphic file (type png)
-<use images/S2 - Activity 1.png>
-Package pdftex.def Info: images/S2 - Activity 1.png  used on input line 171.
-(pdftex.def)             Requested size: 85.3581pt x 113.8115pt.
-
-LaTeX Warning: File `images/S2 - Activity 2.png' not found on input line 172.
-
-<images/S2 - Activity 2.png, id=118, 412.6617pt x 327.3831pt>
-File: images/S2 - Activity 2.png Graphic file (type png)
-<use images/S2 - Activity 2.png>
-Package pdftex.def Info: images/S2 - Activity 2.png  used on input line 172.
-(pdftex.def)             Requested size: 85.3581pt x 113.8115pt.
-
-LaTeX Warning: File `images/S2 - Activity 3.png' not found on input line 173.
-
-<images/S2 - Activity 3.png, id=119, 419.166pt x 327.3831pt>
-File: images/S2 - Activity 3.png Graphic file (type png)
-<use images/S2 - Activity 3.png>
-Package pdftex.def Info: images/S2 - Activity 3.png  used on input line 173.
-(pdftex.def)             Requested size: 85.35394pt x 113.8115pt.
-
-LaTeX Warning: File `images/S2 - Activity 4.png' not found on input line 174.
-
-<images/S2 - Activity 4.png, id=120, 419.166pt x 327.3831pt>
-File: images/S2 - Activity 4.png Graphic file (type png)
-<use images/S2 - Activity 4.png>
-Package pdftex.def Info: images/S2 - Activity 4.png  used on input line 174.
-(pdftex.def)             Requested size: 85.35394pt x 113.8115pt.
-
-LaTeX Warning: File `images/S2 - Activity 5.png' not found on input line 175.
-
-<images/S2 - Activity 5.png, id=121, 421.3341pt x 327.3831pt>
-File: images/S2 - Activity 5.png Graphic file (type png)
-<use images/S2 - Activity 5.png>
-Package pdftex.def Info: images/S2 - Activity 5.png  used on input line 175.
-(pdftex.def)             Requested size: 85.35826pt x 113.8115pt.
-
-LaTeX Warning: File `images/S2 - Activity 6.png' not found on input line 176.
-
-<images/S2 - Activity 6.png, id=122, 412.6617pt x 327.3831pt>
-File: images/S2 - Activity 6.png Graphic file (type png)
-<use images/S2 - Activity 6.png>
-Package pdftex.def Info: images/S2 - Activity 6.png  used on input line 176.
-(pdftex.def)             Requested size: 85.3581pt x 113.8115pt.
-
-LaTeX Warning: File `images/S2 - Activity 7.png' not found on input line 177.
-
-<images/S2 - Activity 7.png, id=123, 412.6617pt x 327.3831pt>
-File: images/S2 - Activity 7.png Graphic file (type png)
-<use images/S2 - Activity 7.png>
-Package pdftex.def Info: images/S2 - Activity 7.png  used on input line 177.
-(pdftex.def)             Requested size: 85.3581pt x 113.8115pt.
-
-LaTeX Warning: File `images/S2 - Activity 8.png' not found on input line 178.
-
-<images/S2 - Activity 8.png, id=124, 412.6617pt x 327.3831pt>
-File: images/S2 - Activity 8.png Graphic file (type png)
-<use images/S2 - Activity 8.png>
-Package pdftex.def Info: images/S2 - Activity 8.png  used on input line 178.
-(pdftex.def)             Requested size: 85.3581pt x 113.8115pt.
-
-LaTeX Warning: File `images/S2 - Activity 9.png' not found on input line 179.
-
-<images/S2 - Activity 9.png, id=125, 412.6617pt x 327.3831pt>
-File: images/S2 - Activity 9.png Graphic file (type png)
-<use images/S2 - Activity 9.png>
-Package pdftex.def Info: images/S2 - Activity 9.png  used on input line 179.
-(pdftex.def)             Requested size: 85.3581pt x 113.8115pt.
-
-LaTeX Warning: File `images/S2 - Activity 10.png' not found on input line 180.
-
-<images/S2 - Activity 10.png, id=126, 412.6617pt x 327.3831pt>
-File: images/S2 - Activity 10.png Graphic file (type png)
-<use images/S2 - Activity 10.png>
-Package pdftex.def Info: images/S2 - Activity 10.png  used on input line 180.
-(pdftex.def)             Requested size: 85.3581pt x 113.8115pt.
-
-LaTeX Warning: File `images/S2 - Activity 11.png' not found on input line 181.
-
-<images/S2 - Activity 11.png, id=127, 415.5525pt x 327.3831pt>
-File: images/S2 - Activity 11.png Graphic file (type png)
-<use images/S2 - Activity 11.png>
-Package pdftex.def Info: images/S2 - Activity 11.png  used on input line 181.
-(pdftex.def)             Requested size: 85.35367pt x 113.8115pt.
-
-Overfull \hbox (4.69997pt too wide) in paragraph at lines 171--182
-\OT1/cmr/m/n/10 ity 2.png [] - Ac-tiv-ity 3.png - Ac-tiv-ity 3.png []
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8 <./images/S1 - Activity 10.png> <./images/S1 - Activity 11.png> <./images/S
-2 - Activity 1.png> <./images/S2 - Activity 2.png> <./images/S2 - Activity 3.pn
-g>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9 <./images/S2 - Activity 4.png> <./images/S2 - Activity 5.png> <./images/S2 
-- Activity 6.png> <./images/S2 - Activity 7.png> <./images/S2 - Activity 8.png>
- <./images/S2 - Activity 9.png>] [10 <./images/S2 - Activity 10.png> <./images/
-S2 - Activity 11.png>] [11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+ [10]
+(./Fall+Detection_Draft1.bbl [11])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 238.
  [12]
-(./Fall+Detection_Draft1.bbl [13])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 247.
- [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 247.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 238.
  (./Fall+Detection_Draft1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 247.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 247.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 238.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 238.
 Package rerunfilecheck Info: File `Fall+Detection_Draft1.out' has not changed.
 (rerunfilecheck)             Checksum: 6560435EA52779745DFF2320A8BC9AF9;126.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 247.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 238.
  ) 
 Here is how much of TeX's memory you used:
- 7253 strings out of 492616
- 106567 string characters out of 6129482
- 217815 words of memory out of 5000000
- 11056 multiletter control sequences out of 15000+600000
+ 7212 strings out of 492616
+ 105613 string characters out of 6129482
+ 217917 words of memory out of 5000000
+ 11011 multiletter control sequences out of 15000+600000
  8054 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 33i,9n,35p,1848b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 33i,12n,35p,1848b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
@@ -739,10 +608,10 @@ local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on Fall+Detection_Draft1.pdf (14 pages, 1493280 bytes).
+Output written on Fall+Detection_Draft1.pdf (12 pages, 648909 bytes).
 PDF statistics:
- 242 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
+ 215 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
  46 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 59 words of extra memory for PDF output out of 10000 (max. 10000000)
 

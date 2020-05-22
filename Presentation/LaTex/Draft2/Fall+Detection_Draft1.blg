@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Fall+Detection_Draft1.aux
 The style file: splncs04.bst
 Database file #1: Fall+Detection_Draft1.bib
-You've used 15 entries,
+You've used 16 entries,
             2850 wiz_defined-function locations,
-            699 strings with 7957 characters,
-and the built_in function-call counts, 9350 in all, are:
-= -- 724
-> -- 364
-< -- 24
-+ -- 150
-- -- 134
-* -- 640
-:= -- 1189
-add.period$ -- 14
-call.type$ -- 15
-change.case$ -- 111
+            705 strings with 8199 characters,
+and the built_in function-call counts, 10079 in all, are:
+= -- 779
+> -- 396
+< -- 26
++ -- 163
+- -- 146
+* -- 691
+:= -- 1280
+add.period$ -- 15
+call.type$ -- 16
+change.case$ -- 120
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 831
-empty$ -- 765
-format.name$ -- 147
-if$ -- 1998
+cite$ -- 16
+duplicate$ -- 895
+empty$ -- 821
+format.name$ -- 160
+if$ -- 2154
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 180
-newline$ -- 51
-num.names$ -- 28
-pop$ -- 308
+int.to.str$ -- 16
+missing$ -- 194
+newline$ -- 54
+num.names$ -- 30
+pop$ -- 332
 preamble$ -- 1
-purify$ -- 97
+purify$ -- 105
 quote$ -- 0
-skip$ -- 242
+skip$ -- 262
 stack$ -- 0
-substring$ -- 461
-swap$ -- 527
-text.length$ -- 24
+substring$ -- 494
+swap$ -- 572
+text.length$ -- 26
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 59
+type$ -- 63
 warning$ -- 0
-while$ -- 67
-width$ -- 17
-write$ -- 152
+while$ -- 72
+width$ -- 18
+write$ -- 162
