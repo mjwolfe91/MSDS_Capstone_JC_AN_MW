@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/MSDS_Capstone_JC_AN_MW.iml" filepath="$PROJECT_DIR$/.idea/MSDS_Capstone_JC_AN_MW.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../covid_partisan_news_nlp/.idea/covid_partisan_news_nlp.iml" filepath="$PROJECT_DIR$/../covid_partisan_news_nlp/.idea/covid_partisan_news_nlp.iml" />
     </modules>
   </component>
 </project>
