@@ -13,10 +13,15 @@ rawData = pd.read_csv('https://raw.githubusercontent.com/mjwolfe91/MSDS_Capstone
 raw_WristSensor = rawData[['TimeStamps','WristAccelerometer', 'Unnamed: 30', 'Unnamed: 31', 'WristAngularVelocity', 'Unnamed: 33', 'Unnamed: 34','Subject', 'Activity', 'Trial']]
 # Rename Columns
 raw_WristSensor.rename(columns = {'TimeStamps':'TimeStamp', 'WristAccelerometer': 'Accelerometer (x)', 'Unnamed: 30':'Accelerometer (y)','Unnamed: 31':'Accelerometer (z)', 'WristAngularVelocity': 'Angular Velocity (x)', 'Unnamed: 33':'Angular Velocity (y)','Unnamed: 34':'Angular Velocity (z)'}, inplace = True)
-# Change data types 
+# Change data types
+## Date Time data types
 raw_WristSensor.TimeStamp = pd.to_datetime(raw_WristSensor.TimeStamp)
+## Numeric data types
 for col in ['Accelerometer (x)','Accelerometer (y)','Accelerometer (z)','Angular Velocity (x)','Angular Velocity (y)','Angular Velocity (z)']:
     raw_WristSensor[col] = pd.to_numeric(raw_WristSensor[1:][col])
+## Categorical data types
+for col in ['Subject', 'Activity', 'Trial']:
+    raw_WristSensor[col] = raw_WristSensor[col].astype('category')
 #raw_WristSensor.dtypes
 
 # Magntiude of Accelerometer and Gyroscope sensors
@@ -76,7 +81,7 @@ for subject in WristS_Subjects.keys():
     WristS_Subjects[subject] = np.array(WristS_Subjects[subject])
     WristS_Subjects[subject] = np.reshape(WristS_Subjects[subject], (-1,12))
 
-# Directory to Store Output
+# Directory to Store Magnitude Plot Outputs
 path = os.path.dirname(__file__)
 output_dir = os.path.join(path,'output\\')
 amag_path = 'plots\\MagntiudeRealizations\\Acceleration\\'
@@ -128,3 +133,107 @@ for subject in WristS_Subjects.keys():
         plt.plot(T1,'r',T2,'b',T3,'g')
         plt.gca().legend(('T1','T2','T3'))
         plt.savefig(output_dir + wmag_path + subject + '\\' + filename, bbox_inches = 'tight')
+
+
+
+
+
+
+
+# Aggregate Wrist Sensor data by Subjects, Activity and Trial
+def sortTrial(dict_,row_):
+    if raw_WristSensor.Trial[i] == 1:
+        dict_['T1'].append(row_)
+    elif raw_WristSensor.Trial[i] == 2:
+        dict_['T2'].append(row_)
+    elif raw_WristSensor.Trial[i] == 3:
+        dict_['T3'].append(row_)
+
+def sortActivityTrial(dict_,row_):
+    if raw_WristSensor.Activity[i] == 1:
+        sortTrial(dict_['A1'],row_)
+        #dict_['A1'].append(row_)
+    elif raw_WristSensor.Activity[i] == 2:
+        sortTrial(dict_['A2'],row_)
+        #dict_['A2'].append(row_)
+    elif raw_WristSensor.Activity[i] == 3:
+        sortTrial(dict_['A3'],row_)
+        #dict_['A3'].append(row_)
+    elif raw_WristSensor.Activity[i] == 4:
+        sortTrial(dict_['A4'],row_)
+        #dict_['A4'].append(row_)
+    elif raw_WristSensor.Activity[i] == 5:
+        sortTrial(dict_['A5'],row_)
+        #dict_['A5'].append(row_)
+    elif raw_WristSensor.Activity[i] == 6:
+        sortTrial(dict_['A6'],row_)
+        #dict_['A6'].append(row_)
+    elif raw_WristSensor.Activity[i] == 7:
+        sortTrial(dict_['A7'],row_)
+        #dict_['A7'].append(row_)
+    elif raw_WristSensor.Activity[i] == 8:
+        sortTrial(dict_['A8'],row_)
+        #dict_['A8'].append(row_)
+    elif raw_WristSensor.Activity[i] == 9:
+        sortTrial(dict_['A9'],row_)
+        #dict_['A9'].append(row_)
+    elif raw_WristSensor.Activity[i] == 10:
+        sortTrial(dict_['A10'],row_)
+        #dict_['A10'].append(row_)
+    elif raw_WristSensor.Activity[i] == 11:
+        sortTrial(dict_['A11'],row_)
+        #dict_['A11'].append(row_)
+
+# Aggregate Wrist Sensor data by Subjects
+WristS_Subjects = {}
+
+for s in np.unique(raw_WristSensor.Subject[1:]):
+    WristS_Subjects["S{0}".format(int(s))] = {"A1":{"T1":[],"T2":[],"T3":[]},"A2":{"T1":[],"T2":[],"T3":[]},"A3":{"T1":[],"T2":[],"T3":[]},"A4":{"T1":[],"T2":[],"T3":[]},"A5":{"T1":[],"T2":[],"T3":[]}, "A6":{"T1":[],"T2":[],"T3":[]},
+                                              "A7":{"T1":[],"T2":[],"T3":[]},"A8":{"T1":[],"T2":[],"T3":[]},"A9":{"T1":[],"T2":[],"T3":[]},"A10":{"T1":[],"T2":[],"T3":[]},"A11":{"T1":[],"T2":[],"T3":[]}}
+
+
+for i, row in raw_WristSensor[1:].iterrows():
+    if raw_WristSensor.Subject[i] == 1:
+        sortActivityTrial(WristS_Subjects['S1'],row)
+    elif raw_WristSensor.Subject[i] == 2:
+        sortActivityTrial(WristS_Subjects['S2'],row)
+    elif raw_WristSensor.Subject[i] == 3:
+        sortActivityTrial(WristS_Subjects['S3'],row)
+    elif raw_WristSensor.Subject[i] == 4:
+        sortActivityTrial(WristS_Subjects['S4'],row)
+    elif raw_WristSensor.Subject[i] == 5:
+        sortActivityTrial(WristS_Subjects['S5'],row)
+    elif raw_WristSensor.Subject[i] == 6:
+        sortActivityTrial(WristS_Subjects['S6'],row)
+    elif raw_WristSensor.Subject[i] == 7:
+        sortActivityTrial(WristS_Subjects['S7'],row)
+    elif raw_WristSensor.Subject[i] == 8:
+        sortActivityTrial(WristS_Subjects['S8'],row)
+    elif raw_WristSensor.Subject[i] == 9:
+        sortActivityTrial(WristS_Subjects['S9'],row)
+    elif raw_WristSensor.Subject[i] == 10:
+        sortActivityTrial(WristS_Subjects['S10'],row)
+    elif raw_WristSensor.Subject[i] == 11:
+        sortActivityTrial(WristS_Subjects['S11'],row)
+    elif raw_WristSensor.Subject[i] == 12:
+        sortActivityTrial(WristS_Subjects['S12'],row)
+    elif raw_WristSensor.Subject[i] == 13:
+        sortActivityTrial(WristS_Subjects['S13'],row)
+    elif raw_WristSensor.Subject[i] == 14:
+        sortActivityTrial(WristS_Subjects['S14'],row)
+    elif raw_WristSensor.Subject[i] == 15:
+        sortActivityTrial(WristS_Subjects['S15'],row)
+    elif raw_WristSensor.Subject[i] == 16:
+        sortActivityTrial(WristS_Subjects['S16'],row)
+    elif raw_WristSensor.Subject[i] == 17:
+        sortActivityTrial(WristS_Subjects['S17'],row)
+
+# Change lists to numpy array
+# Column idx of numpy array [0:Timestamp, 1: Accelerometer (x), 2: Accelerometer (y), 3: Accelerometer (z),
+#                                         4: Angular Velocity (x), 5 Angular Velocity (y), 6: Angular Velocity (z)
+#                                         7: Subject, 8: Activity, 9: Trial, 10: Acceleration Magntiude, 11: Angular Velcoity Magntiude]
+for subject in WristS_Subjects.keys():
+    for activity in WristS_Subjects[subject].keys():
+        for trial in WristS_Subjects[subject][activity].keys():
+            WristS_Subjects[subject][activity][trial] = np.array(WristS_Subjects[subject][activity][trial])
+            WristS_Subjects[subject][activity][trial] = np.reshape(WristS_Subjects[subject][activity][trial], (-1,12))
