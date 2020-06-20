@@ -278,10 +278,69 @@ by taking the maximum magnitudes for acceleration and angular velocity in each t
 		\end{tabular}
  	\end{center}
 \end{table} 
+    
+    For the final step in the model, we created a binary classifier using support vector machines. In order to leverage the labelling we accomplished through clustering, we accepted the centroid distance vectors as input criteria for the SVC. Since we used similar clustering methods for both the triaxial and magnitude models, we tested models of linear, polynomial, and sigmoid kernels on each cluster method, for a total of six classification tests. 
+    
+    The triaxial provided two distance vectors per axis (since one cluster was provided for each), for a total of six vectors. To reduce dimensionality in the classification, we applied PCA with three components, representing each axis distance. These distance components were then input into an SVM classifier and tested with different kernels. The results are stored in the table below.
+    
+\begin{table}
+ 	\begin{center}
+		\caption{SVM Classifier Accuracy for Triaxial Distance Components By Kernel}
+		\label{table5}
+		\begin{tabular}{|c|c|}
+			\toprule
+			Kernel Type & Accuracy Percent\\
+			\midrule
+			Linear Kernel & \makecell{52.972}\\
+			Polynomial Kernel & \makecell{52.972}\\
+			Polynomial Kernel & \makecell{50.622}\\
+			\bottomrule
+		\end{tabular}
+ 	\end{center}
+\end{table} 
 
+    None of the models were very accurate, with each at less than 53 percent accuracy. When plotting a 3D decision boundary of the linear kernel, there were very few points clustered correctly on the boundary plane, such that the plane did not appear among the points. Given that the accuracy was around 50 percent, suggesting the model was incorrect as often as it was correct, this is to be expected.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, height=10cm]{images/Classification/3D_PCA.png} 
+	\caption{: 3D PCA Decision Boundary of Triaxial Distance Components}
+	\label{Figure 2: 3D Plot of Linear Kernel SVM with Triaxial Distance Components}
+\end{figure}    
+
+    Similar to the triaxial model, the magnitude cluster model provided two distance vectors, but since we had created one cluster model using both magnitude thresholds, there was no need for dimensionality reduction. Therefore, the distance vectors were passed to the SVM classifier in their raw form. Again, we repeated these tests on linear, polynomial, and sigmoid kernels. Their accuracy measures are in the below table.
+    
+\begin{table}
+ 	\begin{center}
+		\caption{SVM Classifier Accuracy for Magnitude Distance By Kernel}
+		\label{table5}
+		\begin{tabular}{|c|c|}
+			\toprule
+			Kernel Type & Accuracy Percent\\
+			\midrule
+			Linear Kernel & \makecell{65.945}\\
+			Polynomial Kernel & \makecell{51.891}\\
+			Polynomial Kernel & \makecell{52.972}\\
+			\bottomrule
+		\end{tabular}
+ 	\end{center}
+\end{table} 
+ 
+    We observed significant improvement in using a linear kernel on these distances. Although still not very accurate, a roughly 66 percent accuracy performs much better than the other kernels and the triaxial component model.  A plot of the decision boundary is below.
+    
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, height=10cm]{images/Classification/linear_classifier_boundary.png} 
+	\caption{: Linear SVM Classifier of Magnitude Thresholds}
+	\label{Figure 2: Decision Boundary of Linear Kernel SVM with Magnitude Thresholds}
+\end{figure}     
+
+    Many of the decision points appear to be clustered in an elbow shape around the origin, with most representing the majority class. This likely accounts for much of the accuracy. Further testing should be done to determine the rate of true positives to false negatives.
+    
 %\section{Discussion}
 \section{Conclusion}
-% @Michael: Quickly summarize SVM model performance in this section (i.e. evaluation metric/accuracy, etc.) and how you think the model can be further refined in future analysis
+
+The overall accuracy of the SVM classifier was not very accurate, with the most accurate being a linear kernel on the magnitude thresholds at 66 percent. As mentioned above, there are many points clustered near the origin, suggesting a high rate of true negatives contributing to the overall accuracy. It may be possible to re-test the triaxial model by creating change vectors instead of principle components, since the PCs were built across the entire model, not just each cluster. Additionally, another possible method could be Gaussian mixture model, which would essentially create both components (labelling plus classification) in a single process, although we would need to indicate or compute a threshold of probability for this to work practically.
 
 To further our analysis and the performance of our fall detection algorithm, better signal processing techniques should be employed to represent the time series data in each trial. In this analysis, taking the maximum values of the magnitude of the sensor signal caused all other measurements in each trial besides the peak signal to be discarded. Combinations of high-pass filters on the time series and regression analysis to extract a singular representative value for each trial are recommended as improvements over the current signal processing technique of taking the maximum value. 
 
