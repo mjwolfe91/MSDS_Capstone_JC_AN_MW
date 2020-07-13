@@ -293,7 +293,7 @@ by taking the maximum magnitudes for acceleration and angular velocity in each t
 			\midrule
 			Linear Kernel & \makecell{52.972}\\
 			Polynomial Kernel & \makecell{52.972}\\
-			Polynomial Kernel & \makecell{50.622}\\
+			Gaussian Kernel & \makecell{50.622}\\
 			\bottomrule
 		\end{tabular}
  	\end{center}
@@ -320,7 +320,7 @@ by taking the maximum magnitudes for acceleration and angular velocity in each t
 			\midrule
 			Linear Kernel & \makecell{65.945}\\
 			Polynomial Kernel & \makecell{51.891}\\
-			Polynomial Kernel & \makecell{52.972}\\
+			Gaussian Kernel & \makecell{52.972}\\
 			\bottomrule
 		\end{tabular}
  	\end{center}
@@ -335,12 +335,46 @@ by taking the maximum magnitudes for acceleration and angular velocity in each t
 	\label{Figure 2: Decision Boundary of Linear Kernel SVM with Magnitude Thresholds}
 \end{figure}     
 
-    Many of the decision points appear to be clustered in an elbow shape around the origin, with most representing the majority class. This likely accounts for much of the accuracy. Further testing should be done to determine the rate of true positives to false negatives.
+    Many of the decision points appear to be clustered in an elbow shape around the origin, with most representing the majority class. This likely accounts for much of the accuracy. To account for some of the issues we saw in our first trials, we added a pre-processing step to the model: calculating Acceleration Vector Changes and using these as our threshold instead of the raw magnitude. After calculating these vectors we used the same k-means clustering as before to group and label the activities.
+    
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, height=10cm]{images/MaxMagnitudeClustersAVC.png} 
+	\caption{: K-Means Centroids of Falls and ADLs on AVC and WVC}
+	\label{Figure 1: K-Means Clusters of AVC and WVC Values per Trial}
+\end{figure}
+
+    There are a significant grouping of ADL outliers. For the time-being, we will ignore these and proceed with classification. Since we have had the greatest success with the SVM linear kernel, we will classify the centroid distances of the AVC model with this classifier as well.
+    
+\begin{table}
+ 	\begin{center}
+		\caption{SVM Classifier Accuracy for Magnitude Distance By Kernel}
+		\label{table5}
+		\begin{tabular}{|c|c|}
+			\toprule
+			Kernel Type & Accuracy Percent\\
+			\midrule
+			Linear Kernel & \makecell{77.300}\\
+			\bottomrule
+		\end{tabular}
+ 	\end{center}
+\end{table}     
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm, height=10cm]{images/Classification/linear_classifier_boundary_avc.png} 
+	\caption{: Linear SVM Classifier of AVC and WVC}
+	\label{Figure 2: Linear SVM Classifier of AVC and WVC Values per Trial}
+\end{figure}
+
+With this model there was significantly improved accuracy: over 77 percent. The linear decision plot appears similar to the magnitude model, although more of the ADL values appear to be further from the boundary. This aligns with what is seen in the cluster plot, and could explain the increase in accuracy from the previous model.
     
 %\section{Discussion}
 \section{Conclusion}
 
-The overall accuracy of the SVM classifier was not very accurate, with the most accurate being a linear kernel on the magnitude thresholds at 66 percent. As mentioned above, there are many points clustered near the origin, suggesting a high rate of true negatives contributing to the overall accuracy. It may be possible to re-test the triaxial model by creating change vectors instead of principle components, since the PCs were built across the entire model, not just each cluster. Additionally, another possible method could be Gaussian mixture model, which would essentially create both components (labelling plus classification) in a single process, although we would need to indicate or compute a threshold of probability for this to work practically.
+The overall accuracy of the SVM classifier was low, until the AVC pre-processing step was added. The final, most accurate classifier was a linear kernel on AVC cluster, at about 77 percent. As mentioned above, there are many points clustered near the origin, suggesting a high rate of true negatives contributing to the overall accuracy. Additionally, another possible method could be Gaussian mixture model, which would essentially create both components (labelling plus classification) in a single process, although we would need to indicate or compute a threshold of probability for this to work practically.
+
+The high number of outliers in the cluster analysis is also worth mentioning. Interestingly, most of these outliers corresponded with Activity 10, or the jumping ADL. Although removing this does not improve accuracy by much, it does present an interesting observation: clusters of AVCs are more linearly separable for fall-like acceleration versus other activities.  
 
 To further our analysis and the performance of our fall detection algorithm, better signal processing techniques should be employed to represent the time series data in each trial. In this analysis, taking the maximum values of the magnitude of the sensor signal caused all other measurements in each trial besides the peak signal to be discarded. Combinations of high-pass filters on the time series and regression analysis to extract a singular representative value for each trial are recommended as improvements over the current signal processing technique of taking the maximum value. 
 
