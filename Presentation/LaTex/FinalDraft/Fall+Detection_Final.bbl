@@ -22,21 +22,11 @@ Burns, E., Kakara, R.: Deaths from falls among persons aged$\geq$ 65
 Casilari, E., Santonoyo-Ramón, J.A., Cano-García, J.M.: Analysis of public
   datasets for wearable fall detection systems. Sensors  \textbf{17}(7) (2017)
 
-\bibitem{chen2019method}
-Chen, L., Li, R., Zhang, H., Tian, L., Chen, N.: Intelligent fall detection
-  method based on accelerometer data from a wrist-worn smart watch. Measurement
-   \textbf{140},  215--226 (2019)
-
 \bibitem{de2015towards}
 De~Backere, F., Ongenae, F., Van Den~Abeele, F., Nelis, J., Bonte, P., Clement,
   E., Philpott, M., Hoebeke, J., Verstichel, S., Ackaert, A., et~al.: Towards a
   social and context-aware multi-sensor fall detection and risk assessment
   platform. Computers in biology and medicine  \textbf{64},  307--320 (2015)
-
-\bibitem{garcia2020teaching}
-Garc{\'\i}a, J., Shafie, D.: Teaching a humanoid robot to walk faster through
-  safe reinforcement learning. Engineering Applications of Artificial
-  Intelligence  \textbf{88},  103360 (2020)
 
 \bibitem{gjoreski2016accurately}
 Gjoreski, M., Gjoreski, H., Lu{\v{s}}trek, M., Gams, M.: How accurately can
@@ -61,11 +51,6 @@ Kangas, M., Konttila, A., Lindgren, P., Winblad, I., J{\"a}ms{\"a}, T.:
 Kangas, M., Vikman, I., Wiklander, J., Lindgren, P., Nyberg, L., Jämsä, T.:
   Sensitivity and specificity of fall detection in people aged 40 years and
   over. Gait \& Posture  \textbf{29}(4),  571--574 (2009)
-
-\bibitem{lim2014fall}
-Lim, D., Park, C., Kim, N.H., Kim, S.H., Yu, Y.S.: Fall-detection algorithm
-  using 3-axis acceleration: combination with simple threshold and hidden
-  markov model. Journal of Applied Mathematics  \textbf{2014} (2014)
 
 \bibitem{martinez2019up}
 Mart{\'\i}nez-Villase{\~n}or, L., Ponce, H., Brieva, J., Moya-Albor, E.,

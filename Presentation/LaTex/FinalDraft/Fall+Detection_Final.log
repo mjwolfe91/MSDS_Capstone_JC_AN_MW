@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  3 AUG 2020 21:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  4 AUG 2020 16:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -504,159 +504,157 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 38.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 43.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 44.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 43.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 44.
  [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 63--63
+Underfull \hbox (badness 10000) in paragraph at lines 66--66
  [][][][]$\OT1/cmtt/m/n/9 https : / / www . pewresearch . org / fact-[]tank / 2
 020 / 01 / 09 /
  []
 
+[2] [3]
+Underfull \vbox (badness 1867) has occurred while \output is active []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
-[3] [4] [5]
-Overfull \hbox (5.43256pt too wide) in paragraph at lines 123--124
+ [4]
+Overfull \hbox (5.43256pt too wide) in paragraph at lines 130--131
 []\OT1/cmr/m/n/10 Support Vec-tor Ma-chines are a su-per-vised ma-chine learn-i
 ng tech-nique wherein,
  []
 
-[6] [7]
-<images/Acceleration/S1_Activity1.png, id=108, 403.2666pt x 327.3831pt>
+[5] [6]
+<images/Acceleration/S1_Activity1.png, id=103, 403.2666pt x 327.3831pt>
 File: images/Acceleration/S1_Activity1.png Graphic file (type png)
 <use images/Acceleration/S1_Activity1.png>
 Package pdftex.def Info: images/Acceleration/S1_Activity1.png  used on input li
-ne 210.
+ne 217.
 (pdftex.def)             Requested size: 142.26532pt x 113.8115pt.
-<images/AngularVelocity/S1_Activity1.png, id=110, 416.2752pt x 327.3831pt>
+<images/AngularVelocity/S1_Activity1.png, id=105, 416.2752pt x 327.3831pt>
 File: images/AngularVelocity/S1_Activity1.png Graphic file (type png)
 <use images/AngularVelocity/S1_Activity1.png>
 Package pdftex.def Info: images/AngularVelocity/S1_Activity1.png  used on input
- line 210.
+ line 217.
 (pdftex.def)             Requested size: 142.26215pt x 113.8115pt.
-<images/Acceleration/S1_Activity2.png, id=111, 412.6617pt x 327.3831pt>
+<images/Acceleration/S1_Activity2.png, id=106, 412.6617pt x 327.3831pt>
 File: images/Acceleration/S1_Activity2.png Graphic file (type png)
 <use images/Acceleration/S1_Activity2.png>
 Package pdftex.def Info: images/Acceleration/S1_Activity2.png  used on input li
-ne 212.
+ne 219.
 (pdftex.def)             Requested size: 142.26138pt x 113.8115pt.
-<images/AngularVelocity/S1_Activity2.png, id=112, 416.2752pt x 327.3831pt>
+<images/AngularVelocity/S1_Activity2.png, id=107, 416.2752pt x 327.3831pt>
 File: images/AngularVelocity/S1_Activity2.png Graphic file (type png)
 <use images/AngularVelocity/S1_Activity2.png>
 Package pdftex.def Info: images/AngularVelocity/S1_Activity2.png  used on input
- line 212.
+ line 219.
 (pdftex.def)             Requested size: 142.26215pt x 113.8115pt.
-<images/Acceleration/S1_Activity3.png, id=113, 418.4433pt x 327.3831pt>
+<images/Acceleration/S1_Activity3.png, id=108, 418.4433pt x 327.3831pt>
 File: images/Acceleration/S1_Activity3.png Graphic file (type png)
 <use images/Acceleration/S1_Activity3.png>
 Package pdftex.def Info: images/Acceleration/S1_Activity3.png  used on input li
-ne 214.
+ne 221.
 (pdftex.def)             Requested size: 142.26245pt x 113.8115pt.
-<images/AngularVelocity/S1_Activity3.png, id=114, 421.3341pt x 327.3831pt>
+<images/AngularVelocity/S1_Activity3.png, id=109, 421.3341pt x 327.3831pt>
 File: images/AngularVelocity/S1_Activity3.png Graphic file (type png)
 <use images/AngularVelocity/S1_Activity3.png>
 Package pdftex.def Info: images/AngularVelocity/S1_Activity3.png  used on input
- line 214.
+ line 221.
 (pdftex.def)             Requested size: 142.26163pt x 113.8115pt.
-<images/Acceleration/S1_Activity4.png, id=115, 406.8801pt x 327.3831pt>
+<images/Acceleration/S1_Activity4.png, id=110, 406.8801pt x 327.3831pt>
 File: images/Acceleration/S1_Activity4.png Graphic file (type png)
 <use images/Acceleration/S1_Activity4.png>
 Package pdftex.def Info: images/Acceleration/S1_Activity4.png  used on input li
-ne 216.
+ne 223.
 (pdftex.def)             Requested size: 142.26115pt x 113.8115pt.
-<images/AngularVelocity/S1_Activity4.png, id=116, 419.8887pt x 327.3831pt>
+<images/AngularVelocity/S1_Activity4.png, id=111, 419.8887pt x 327.3831pt>
 File: images/AngularVelocity/S1_Activity4.png Graphic file (type png)
 <use images/AngularVelocity/S1_Activity4.png>
 Package pdftex.def Info: images/AngularVelocity/S1_Activity4.png  used on input
- line 216.
+ line 223.
 (pdftex.def)             Requested size: 142.26692pt x 113.8115pt.
-<images/Acceleration/S1_Activity5.png, id=117, 409.7709pt x 327.3831pt>
+<images/Acceleration/S1_Activity5.png, id=112, 409.7709pt x 327.3831pt>
 File: images/Acceleration/S1_Activity5.png Graphic file (type png)
 <use images/Acceleration/S1_Activity5.png>
 Package pdftex.def Info: images/Acceleration/S1_Activity5.png  used on input li
-ne 218.
+ne 225.
 (pdftex.def)             Requested size: 142.26523pt x 113.8115pt.
-<images/AngularVelocity/S1_Activity5.png, id=118, 412.6617pt x 327.3831pt>
+<images/AngularVelocity/S1_Activity5.png, id=113, 412.6617pt x 327.3831pt>
 File: images/AngularVelocity/S1_Activity5.png Graphic file (type png)
 <use images/AngularVelocity/S1_Activity5.png>
 Package pdftex.def Info: images/AngularVelocity/S1_Activity5.png  used on input
- line 218.
+ line 225.
 (pdftex.def)             Requested size: 142.26138pt x 113.8115pt.
 
 
-LaTeX Warning: Float too large for page by 107.64406pt on input line 222.
+LaTeX Warning: Float too large for page by 107.64406pt on input line 229.
 
-[8] [9 <./images/Acceleration/S1_Activity1.png> <./images/AngularVelocity/S1_Ac
+[7] [8 <./images/Acceleration/S1_Activity1.png> <./images/AngularVelocity/S1_Ac
 tivity1.png> <./images/Acceleration/S1_Activity2.png> <./images/AngularVelocity
 /S1_Activity2.png> <./images/Acceleration/S1_Activity3.png> <./images/AngularVe
 locity/S1_Activity3.png> <./images/Acceleration/S1_Activity4.png> <./images/Ang
 ularVelocity/S1_Activity4.png> <./images/Acceleration/S1_Activity5.png> <./imag
-es/AngularVelocity/S1_Activity5.png>] [10]
-Underfull \vbox (badness 1102) has occurred while \output is active []
-
- [11]
-<images/MaxMagnitudeClusters.png, id=161, 1872.9975pt x 1534.73375pt>
+es/AngularVelocity/S1_Activity5.png>]
+<images/MaxMagnitudeClusters.png, id=136, 1872.9975pt x 1534.73375pt>
 File: images/MaxMagnitudeClusters.png Graphic file (type png)
 <use images/MaxMagnitudeClusters.png>
-Package pdftex.def Info: images/MaxMagnitudeClusters.png  used on input line 26
-6.
+Package pdftex.def Info: images/MaxMagnitudeClusters.png  used on input line 27
+2.
 (pdftex.def)             Requested size: 341.41194pt x 284.50676pt.
 
-Overfull \hbox (3.5803pt too wide) in paragraph at lines 293--301
+Overfull \hbox (3.5803pt too wide) in paragraph at lines 299--307
  [] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
-[13 <./images/MaxMagnitudeClusters.png>]
-<images/Classification/3D_PCA.png, id=175, 350.30875pt x 231.86626pt>
+[9] [10 <./images/MaxMagnitudeClusters.png>]
+<images/Classification/3D_PCA.png, id=149, 350.30875pt x 231.86626pt>
 File: images/Classification/3D_PCA.png Graphic file (type png)
 <use images/Classification/3D_PCA.png>
 Package pdftex.def Info: images/Classification/3D_PCA.png  used on input line 3
-30.
+36.
 (pdftex.def)             Requested size: 341.45612pt x 284.5534pt.
-<images/Classification/linear_classifier_boundary.png, id=176, 510.90875pt x 33
+<images/Classification/linear_classifier_boundary.png, id=150, 510.90875pt x 33
 2.24126pt>
 File: images/Classification/linear_classifier_boundary.png Graphic file (type p
 ng)
 <use images/Classification/linear_classifier_boundary.png>
 Package pdftex.def Info: images/Classification/linear_classifier_boundary.png  
-used on input line 359.
+used on input line 365.
 (pdftex.def)             Requested size: 341.42615pt x 284.54576pt.
- [14] [15 <./images/Classification/3D_PCA.png>]
-<images/MaxMagnitudeClustersAVC.png, id=191, 1275.76625pt x 955.57pt>
+ [11] [12 <./images/Classification/3D_PCA.png>] [13 <./images/Classification/li
+near_classifier_boundary.png>]
+<images/MaxMagnitudeClustersAVC.png, id=171, 1275.76625pt x 955.57pt>
 File: images/MaxMagnitudeClustersAVC.png Graphic file (type png)
 <use images/MaxMagnitudeClustersAVC.png>
 Package pdftex.def Info: images/MaxMagnitudeClustersAVC.png  used on input line
- 368.
+ 374.
 (pdftex.def)             Requested size: 341.4247pt x 284.51524pt.
-<images/Classification/linear_classifier_boundary_avc.png, id=192, 536.0025pt x
+<images/Classification/linear_classifier_boundary_avc.png, id=172, 536.0025pt x
  371.3875pt>
 File: images/Classification/linear_classifier_boundary_avc.png Graphic file (ty
 pe png)
 <use images/Classification/linear_classifier_boundary_avc.png>
 Package pdftex.def Info: images/Classification/linear_classifier_boundary_avc.p
-ng  used on input line 391.
+ng  used on input line 397.
 (pdftex.def)             Requested size: 341.42921pt x 284.53552pt.
- [16 <./images/Classification/linear_classifier_boundary.png>] [17 <./images/Ma
-xMagnitudeClustersAVC.png>] [18 <./images/Classification/linear_classifier_boun
-dary_avc.png>] [19] (./Fall+Detection_Final.bbl [20])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 434.
- [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 434.
 
-(./Fall+Detection_Final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 434.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 434.
+[14 <./images/MaxMagnitudeClustersAVC.png>] [15 <./images/Classification/linear
+_classifier_boundary_avc.png>] [16]
+Overfull \hbox (2.73822pt too wide) in paragraph at lines 432--433
+[]\OT1/cmr/m/n/10 We pro-pose a novel au-tonomous fall-detection sys-tem us-ing
+ al-go-rithms trained
+ []
+
+(./Fall+Detection_Final.bbl [17])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 449.
+ [18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 449.
+ (./Fall+Detection_Final.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 449.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 449.
 Package rerunfilecheck Info: File `Fall+Detection_Final.out' has not changed.
 (rerunfilecheck)             Checksum: 417F982E8C6FE8D5DCEAD039D49664AC;105.
 
@@ -666,16 +664,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 434.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 449.
  ) 
 Here is how much of TeX's memory you used:
- 7471 strings out of 492616
- 109461 string characters out of 6129482
- 224158 words of memory out of 5000000
- 11234 multiletter control sequences out of 15000+600000
+ 7461 strings out of 492616
+ 109324 string characters out of 6129482
+ 223045 words of memory out of 5000000
+ 11230 multiletter control sequences out of 15000+600000
  8362 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 33i,15n,35p,1845b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 33i,15n,35p,1845b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -687,10 +685,10 @@ l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texl
 ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texliv
 e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on Fall+Detection_Final.pdf (21 pages, 898489 bytes).
+Output written on Fall+Detection_Final.pdf (18 pages, 887495 bytes).
 PDF statistics:
- 295 PDF objects out of 1000 (max. 8388607)
- 203 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
+ 267 PDF objects out of 1000 (max. 8388607)
+ 184 compressed objects within 2 object streams
+ 62 named destinations out of 1000 (max. 500000)
  84 words of extra memory for PDF output out of 10000 (max. 10000000)
 
