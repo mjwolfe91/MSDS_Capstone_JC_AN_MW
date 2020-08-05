@@ -350,9 +350,9 @@ by taking the maximum magnitudes for acceleration and angular velocity in each t
 			\toprule
 			Kernel Type & Accuracy Percent\\
 			\midrule
-			Linear Kernel & \makecell{65.945}\\
+			Linear Kernel & \makecell{67.000}\\
 			Polynomial Kernel & \makecell{51.891}\\
-			Gaussian Kernel & \makecell{52.972}\\
+			Gaussian Kernel & \makecell{58.900}\\
 			\bottomrule
 		\end{tabular}
  	\end{center}
@@ -380,13 +380,13 @@ by taking the maximum magnitudes for acceleration and angular velocity in each t
     
 \begin{table}
  	\begin{center}
-		\caption{SVM Classifier Accuracy for Magnitude Distance By Kernel}
+		\caption{SVM Classifier Accuracy for AVC Distance By Kernel}
 		\label{table5}
-		\begin{tabular}{|c|c|}
+		\begin{tabular}{|c|c|c|c|c|}
 			\toprule
-			Kernel Type & Accuracy Percent\\
+			Kernel Type & Accuracy Percent & Precision Percent & Recall Percent & F1 Score\\
 			\midrule
-			Linear Kernel & \makecell{77.300}\\
+			Linear Kernel & \makecell{78.400} & \makecell{74.200} & \makecell{82.800} & \makecell{78.300}\\
 			\bottomrule
 		\end{tabular}
  	\end{center}
@@ -399,13 +399,15 @@ by taking the maximum magnitudes for acceleration and angular velocity in each t
 	\label{Figure 2: Linear SVM Classifier of AVC and WVC Values per Trial}
 \end{figure}
 
-With this model there was significantly improved accuracy: over 77 percent. The linear decision plot appears similar to the magnitude model, although more of the ADL values appear to be further from the boundary. This aligns with what is seen in the cluster plot, and could explain the increase in accuracy from the previous model.
+With this model there was significantly improved accuracy: over 78 percent. The linear decision plot appears similar to the magnitude model, although more of the ADL values appear to be further from the boundary. This aligns with what is seen in the cluster plot, and could explain the increase in accuracy from the previous model.
 
 \section{Discussion}
 
 %add more detail and citations
 
-As mentioned in the results, our final model (AVC to K-Means to SVM) had an accuracy of about 77 percent, on par with many fall detection systems currently in production in products such as FitBit and the Apple Watch. However, unlike these products our model is much more precise. We would like to see our model adopted into wearables for comparison to existing products.
+As mentioned in the results, our final model (AVC to K-Means to SVM) had an accuracy of about 78 percent. Although there is sparse research on the efficacy of existing fall detection systems outside laboratory settings, owing to many manufacturers being reticent to releasing that information, many consumer studies report similar accuracy to our result. However, unlike these products our model is much more precise, at 74 percent.
+
+For a next step,we would like to see our model adopted into wearables for comparison to existing products, for the eventual purpose of building an autonomous call system to summon emergency medical services, in the event a fall results in incapacitation. The imprecision of existing system is a barrier for such a development, and we believe introducing a more precise model such as ours will ensure broader adoption by rectifying this issue.
 
 % Add AVC to multiphase-fall model: free fall, impact, rest phases
 %% Optimize AVC window to capture sudden changes
