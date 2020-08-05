@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  4 AUG 2020 16:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  4 AUG 2020 19:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -643,18 +643,18 @@ ng  used on input line 397.
 
 [14 <./images/MaxMagnitudeClustersAVC.png>] [15 <./images/Classification/linear
 _classifier_boundary_avc.png>] [16]
-Overfull \hbox (2.73822pt too wide) in paragraph at lines 432--433
+Overfull \hbox (2.73822pt too wide) in paragraph at lines 434--435
 []\OT1/cmr/m/n/10 We pro-pose a novel au-tonomous fall-detection sys-tem us-ing
  al-go-rithms trained
  []
 
 (./Fall+Detection_Final.bbl [17])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 449.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 451.
  [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 449.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 451.
  (./Fall+Detection_Final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 449.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 449.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 451.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 451.
 Package rerunfilecheck Info: File `Fall+Detection_Final.out' has not changed.
 (rerunfilecheck)             Checksum: 417F982E8C6FE8D5DCEAD039D49664AC;105.
 
@@ -664,12 +664,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 449.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 451.
  ) 
 Here is how much of TeX's memory you used:
  7461 strings out of 492616
  109324 string characters out of 6129482
- 223045 words of memory out of 5000000
+ 223039 words of memory out of 5000000
  11230 multiletter control sequences out of 15000+600000
  8362 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -685,7 +685,7 @@ l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texl
 ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texliv
 e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on Fall+Detection_Final.pdf (18 pages, 887495 bytes).
+Output written on Fall+Detection_Final.pdf (18 pages, 888026 bytes).
 PDF statistics:
  267 PDF objects out of 1000 (max. 8388607)
  184 compressed objects within 2 object streams
