@@ -326,8 +326,14 @@ We compare the competing preprocessing methods by feeding the different features
 		\end{tabular}
  	\end{center}
 \end{table} 
-    
-    For the final step in the model, we created a binary classifier using support vector machines. In order to leverage the labelling we accomplished through clustering, we accepted the centroid distance vectors as input criteria for the SVC. Since we used similar clustering methods for both the triaxial and magnitude models, we tested models of linear, polynomial, and sigmoid kernels on each cluster method, for a total of six classification tests. 
+
+\subsubsection{Support Vector Machine Classification} 
+
+	Support Vector Machines are a supervised machine learning technique wherein, given a 2D feature space, a hyperplane (also known as a decision boundary), is defined which separates one class from another. It requires labelled data to define these classes, and relies on kernels (mathematical functions to elevate the feature space) to define the hyperplane.
+
+	We use a SVM to classify centroid distances generated from k-means to predict falls vs ADLs. We will need to test a variety of kernels, since the k-means feature space may or may not be linear, quadratic, or possibly separable in a 3D feature space. We will use accuracy and precision as competitive measures to determine which kernel is best in our final model.
+
+    For the final step in the model, we created a binary classifier using SVM. In order to leverage the labelling we accomplished through clustering, we accepted the centroid distance vectors as input criteria for the SVC. Since we used similar clustering methods for both the triaxial and magnitude models, we tested models of linear, polynomial, and sigmoid kernels on each cluster method, for a total of six classification tests. 
     
 \section{Results}
     
