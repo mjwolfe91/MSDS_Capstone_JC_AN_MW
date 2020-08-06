@@ -113,23 +113,23 @@ Fall detection is a rich field with considerable depth and breadth. Much work ha
     
     %Aside from data processing techniques, another widely explored field in fall detection is the number, placement, and type of sensor used to detect falls. As mentioned above, Gjoreski's study uses sensors in the waist, thigh, wrist, and head. Each sensor is found to have different levels of accuracy depending on which model was uses. For example, Random Forest on the head-mounted sensor was the most accurate of all models and sensors. However, using SVM the left-wrist-based sensor produced a fairly accurate model.\cite{gjoreski2016accurately} For our purposes we will focus on a sensor based on the left wrist. From a practicality standpoint this is the best approach. Popular products today equipped with fall detection technology are generally smart watches, worn on the left wrist. Given that our algorithm is likely to see broader adoption if geared towards smart watches, we will focus on methods that are based on these types of sensors.
 
-\subsection{Tutorial}
+%\subsection{Tutorial}
 
-The three primary techniques leveraged in our model are Acceleration Vector Changes, K-Means Clustering, and Support Vector Machines. Each of these techniques, in ensemble, form the final state of our fall classification pipeline. This represents a synthesis of multiple previous efforts discussed in our Related Works, along with our own analysis of the data.
+%The three primary techniques leveraged in our model are Acceleration Vector Changes, K-Means Clustering, and Support Vector Machines. Each of these techniques, in ensemble, form the final state of our fall classification pipeline. This represents a synthesis of multiple previous efforts discussed in our Related Works, along with our own analysis of the data.
 
 %add more detail to each
 
-Acceleration Vector Changes are a signal processing method of calculating the per-trial acceleration vector.
+%Acceleration Vector Changes are a signal processing method of calculating the per-trial acceleration vector.
 
 %A high level diagram on machine learning could be really nice here, especially explaining the differences between subtypes, starting at supervised and unsupervised and drilling down
 
-K-means clustering is an unsupervised learning technique by which unlabelled input vectors are assigned squared Euclidean distances from k-centroids. Typically, the user defines the number of expected clusters in order to create labels for the data. K-means is rooted in signal processing and data mining, thus it is a strong choice for the problem at hand.
+%K-means clustering is an unsupervised learning technique by which unlabelled input vectors are assigned squared Euclidean distances from k-centroids. Typically, the user defines the number of expected clusters in order to create labels for the data. K-means is rooted in signal processing and data mining, thus it is a strong choice for the problem at hand.
 
-Specifically, we are using k-means to create labels for our dataset. Since we already know we want to define the input vectors into falls and ADLs from the various activities, k-means will group and label these vectors accordingly.
+%Specifically, we are using k-means to create labels for our dataset. Since we already know we want to define the input vectors into falls and ADLs from the various activities, k-means will group and label these vectors accordingly.
 
-Support Vector Machines are a supervised machine learning technique wherein, given a 2D feature space, a hyperplane (also known as a decision boundary), is defined which separates one class from another. It requires labelled data to define these classes, and relies on kernels (mathematical functions to elevate the feature space) to define the hyperplane.
+%Support Vector Machines are a supervised machine learning technique wherein, given a 2D feature space, a hyperplane (also known as a decision boundary), is defined which separates one class from another. It requires labelled data to define these classes, and relies on kernels (mathematical functions to elevate the feature space) to define the hyperplane.
 
-We use a SVM to classify centroid distances generated from k-means to predict falls vs ADLs. We will need to test a variety of kernels, since the k-means feature space may or may not be linear, quadratic, or possibly separable in a 3D feature space. We will use accuracy and precision as competitive measures to determine which kernel is best in our final model.
+%We use a SVM to classify centroid distances generated from k-means to predict falls vs ADLs. We will need to test a variety of kernels, since the k-means feature space may or may not be linear, quadratic, or possibly separable in a 3D feature space. We will use accuracy and precision as competitive measures to determine which kernel is best in our final model.
     
 \section{Materials and Methods}
 
@@ -331,26 +331,24 @@ We compare the competing preprocessing methods by feeding the different features
     
 \section{Results}
     
-    The triaxial provided two distance vectors per axis (since one cluster was provided for each), for a total of six vectors. To reduce dimensionality in the classification, we applied PCA with three components, representing each axis distance. These distance components were then input into an SVM classifier and tested with different kernels. The results are stored in the table below.
+    The triaxial provided two distance vectors per axis (since one cluster was provided for each), for a total of six vectors. To reduce dimensionality in the classification, we applied Principle Component Analysis with three components, representing each axis distance in order to reduce the dimensionality required for classification. These distance components were then input into an SVM classifier and tested with different kernels. The results are represented in the 3D scatterplot below:
+        
+%\begin{table}
+% 	\begin{center}
+%		\caption{SVM Classifier Accuracy for Triaxial Distance Components By Kernel}
+%		\label{table5}
+%		\begin{tabular}{|c|c|}
+%			\toprule
+%			Kernel Type & Accuracy Percent\\
+%			\midrule
+%			Linear Kernel & \makecell{52.972}\\
+%			Polynomial Kernel & \makecell{52.972}\\
+%			Gaussian Kernel & \makecell{50.622}\\
+%			\bottomrule
+%		\end{tabular}
+ %	\end{center}
+%\end{table} 
     
-\begin{table}
- 	\begin{center}
-		\caption{SVM Classifier Accuracy for Triaxial Distance Components By Kernel}
-		\label{table5}
-		\begin{tabular}{|c|c|}
-			\toprule
-			Kernel Type & Accuracy Percent\\
-			\midrule
-			Linear Kernel & \makecell{52.972}\\
-			Polynomial Kernel & \makecell{52.972}\\
-			Gaussian Kernel & \makecell{50.622}\\
-			\bottomrule
-		\end{tabular}
- 	\end{center}
-\end{table} 
-
-    None of the models were very accurate, with each at less than 53 percent accuracy. When plotting a 3D decision boundary of the linear kernel, there were very few points clustered correctly on the boundary plane, such that the plane did not appear among the points. Given that the accuracy was around 50 percent, suggesting the model was incorrect as often as it was correct, this is to be expected.
-
 \begin{figure}
 	\centering
 	\includegraphics[width=12cm, height=10cm]{images/Classification/3D_PCA.png} 
@@ -358,25 +356,27 @@ We compare the competing preprocessing methods by feeding the different features
 	\label{Figure 2: 3D Plot of Linear Kernel SVM with Triaxial Distance Components}
 \end{figure}    
 
-    Due to the inaccuracy of the trixial and magnitude models, we pivoted our input to use AVCs instead. A pre-processing step was added prior to clustering to create AVC's using the formula in the above section. These vectors were then passed into the kmeans algorithm and consequent SVM.
 
-    Similar to the triaxial model, the magnitude cluster model provided two distance vectors, but since we had created one cluster model using both magnitude thresholds, there was no need for dimensionality reduction. Therefore, the distance vectors were passed to the SVM classifier in their raw form. Again, we repeated these tests on linear, polynomial, and sigmoid kernels. Their accuracy measures are in the below table.
+	Many of the classification are clustered around a single point, and are not easily separable in a linear or higher dimensional plane. This is reflected in the accuracy, which hovered around 50 percent regardless of the kernel selected for SVM classification. Given this low performance and lack of response to parameter tuning, the triaxial model with PCA will no longer be considered. 
+
+    Similar to the triaxial model, the magnitude cluster model provided two distance vectors, but since we had created one cluster model using both magnitude thresholds, there was no need for dimensionality reduction. Therefore, the distance vectors were passed to the SVM classifier in their raw form. Again, we repeated these tests on linear, polynomial, and sigmoid kernels. 
+    %Their accuracy measures are in the below table.
     
-\begin{table}
- 	\begin{center}
-		\caption{SVM Classifier Accuracy for Magnitude Distance By Kernel}
-		\label{table5}
-		\begin{tabular}{|c|c|}
-			\toprule
-			Kernel Type & Accuracy Percent\\
-			\midrule
-			Linear Kernel & \makecell{67.000}\\
-			Polynomial Kernel & \makecell{51.891}\\
-			Gaussian Kernel & \makecell{58.900}\\
-			\bottomrule
-		\end{tabular}
- 	\end{center}
-\end{table} 
+%\begin{table}
+ %	\begin{center}
+%		\caption{SVM Classifier Accuracy for Magnitude Distance By Kernel}
+%		\label{table5}
+%		\begin{tabular}{|c|c|}
+%			\toprule
+%			Kernel Type & Accuracy Percent\\
+%			\midrule
+%			Linear Kernel & \makecell{67.000}\\
+%			Polynomial Kernel & \makecell{51.891}\\
+%			Gaussian Kernel & \makecell{58.900}\\
+%			\bottomrule
+%		\end{tabular}
+ %	\end{center}
+%\end{table} 
  
     We observed significant improvement in using a linear kernel on these distances. Although still not very accurate, a roughly 66 percent accuracy performs much better than the other kernels and the triaxial component model. A plot of the decision boundary is below.
     
@@ -387,8 +387,10 @@ We compare the competing preprocessing methods by feeding the different features
 	\label{Figure 3: Decision Boundary of Linear Kernel SVM with Magnitude Thresholds}
 \end{figure}     
 
-    Many of the decision points appear to be clustered in an elbow shape around the origin, with most representing the majority class. This likely accounts for much of the accuracy. To account for some of the issues we saw in our first trials, we added a pre-processing step to the model: calculating Acceleration Vector Changes and using these as our threshold instead of the raw magnitude. After calculating these vectors we used the same k-means clustering as before to group and label the activities.
+    Many of the decision points appear to be clustered in an elbow shape around the origin, with most representing the majority class. This likely accounts for much of the accuracy improvements, but likely does not mean there is a significant increase in precision
     
+	To account for some of the issues we saw in our first trials, we added a pre-processing step to the model: calculating Acceleration Vector Changes and using these as our threshold instead of the raw magnitude. After calculating these vectors we used the same k-means clustering as before to group and label the activities.
+	
 \begin{figure}
 	\centering
 	\includegraphics[width=12cm, height=10cm]{images/MaxMagnitudeClustersAVC.png} 
@@ -396,31 +398,38 @@ We compare the competing preprocessing methods by feeding the different features
 	\label{Figure 4: K-Means Clusters of AVC and WVC Values per Trial}
 \end{figure}
 
-% Put in discussion when talking about outliers - show activity labeled K-means plot and talk about jumping -> 
-%    There are a significant grouping of ADL outliers. For the time-being, we will ignore these and proceed with classification. Since we have had the greatest success with the SVM linear kernel, we will classify the centroid distances of the AVC model with this classifier as well.
-    
-\begin{table}
- 	\begin{center}
-		\caption{SVM Classifier Accuracy for AVC Distance By Kernel}
-		\label{table5}
-		\begin{tabular}{|c|c|c|c|c|}
-			\toprule
-			Kernel Type & Accuracy Percent & Precision Percent & Recall Percent & F1 Score\\
-			\midrule
-			Linear Kernel & \makecell{78.400} & \makecell{74.200} & \makecell{82.800} & \makecell{78.300}\\
-			\bottomrule
-		\end{tabular}
- 	\end{center}
-\end{table}     
-
+	Similar to previous pre-processing methods, we still see significant outliers, categorically on Activity Ten (jumping). Given that this new pre-processing step would produce larger vector changes for activities that involve sudden acceleration changes, this is expected. We will proceed with classification.
+	
 \begin{figure}
 	\centering
 	\includegraphics[width=12cm, height=10cm]{images/Classification/linear_classifier_boundary_avc.png} 
 	\caption{: Linear SVM Classifier of AVC and WVC}
 	\label{Figure 5: Linear SVM Classifier of AVC and WVC Values per Trial}
 \end{figure}
+        
 
-With this model there was significantly improved accuracy: over 78 percent. The linear decision plot appears similar to the magnitude model, although more of the ADL values appear to be further from the boundary. This aligns with what is seen in the cluster plot, and could explain the increase in accuracy from the previous model.
+% Put in discussion when talking about outliers - show activity labeled K-means plot and talk about jumping -> 
+%    There are a significant grouping of ADL outliers. For the time-being, we will ignore these and proceed with classification. Since we have had the greatest success with the SVM linear kernel, we will classify the centroid distances of the AVC model with this classifier as well.
+
+With this model there was significantly improved accuracy: over 78 percent. The linear decision plot appears similar to the magnitude model, although more of the ADL values appear to be further from the boundary. This aligns with what is seen in the cluster plot, and could explain the increase in accuracy from the previous model. A final comparison of our best model results is below.
+    
+\begin{table}
+ 	\begin{center}
+		\caption{SVM Classifier Accuracy for AVC Distance By Kernel}
+		\label{table5}
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\toprule
+			Pre-Processing & Kernel Type & Accuracy Percent & Precision Percent & Recall Percent & F1 Score\\
+			\midrule
+			AVC & Linear Kernel & \makecell{78.400} & \makecell{74.200} & \makecell{82.800} & \makecell{78.300}\\
+			Magnitude Threshold & Linear Kernel & \makecell{67.000} & \makecell{63.800} & \makecell{69.00} & \makecell{66.300}\\
+			Magnitude Threshold & Gaussian Kernel & \makecell{58.900} & \makecell{58.500} & \makecell{43.700} & \makecell{50.000}\\
+			\bottomrule
+		\end{tabular}
+ 	\end{center}
+\end{table}     
+
+
 
 \section{Discussion}
 
