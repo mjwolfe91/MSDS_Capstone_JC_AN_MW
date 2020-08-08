@@ -330,7 +330,7 @@ Eleven clusters were initially tested to simulate the 11 different experimental 
 \end{table} 
 
 \subsubsection{Support Vector Machine Classification} 
-Support Vector Machines are a supervised machine learning technique wherein, given a 2D feature space, a decision line (hyperplane) is defined to separate one class from another. It requires labelled training data to define categorical classes, and implements transformation kernels to project the data onto higher-dimensional spaces so a separating hyperplane can be determined. The hyperplane is best defined as a decision boundary that maximizes the distance of the data points nearest the boundary line in each class label. 
+	Support Vector Machines are a supervised machine learning technique wherein, given a 2D feature space, a decision line (hyperplane) is defined to separate one class from another. It requires labelled training data to define categorical classes. Once these are received, the vectors  and implements transformation kernels to project the data onto higher-dimensional spaces so a separating hyperplane can be determined. The hyperplane is best defined as a decision boundary that maximizes the distance of the data points nearest the boundary line in each class label. 
 
 	With non-linearly separable data, kernel tricks are employed to map the data into a different dimensionality space so that the SVM algorithm can better identify a decision boundary capable of linearly separating classes. A variety of kernels (i.e., linear, sigmoid, polynomial, Gaussian) are tested on the k-means feature space to evaluate the best parameters for the binary classification of falls from activities of daily living. Accuracy, recall, precision, and f1-score are used as comparative metrics to quantify the performance of competing models. In order to leverage the k-means labeling of fall and ADL threshold values, the centroid distance vectors from the different data processing methods were fed into a Support Vector Classifier (SVC) as input criteria.
 
@@ -397,7 +397,8 @@ The triaxial provided two distance vectors per axis (since one cluster was provi
  %	\end{center}
 %\end{table} 
 		
-PLACEHOLDER!!!! ADD COMMENTARY TO SVM DECISION BOUNDARY ON AVC \& WVC PLOT
+	The AVC cluster classification produces a much more narrow hyperplane, along with the same elbow shape seen in previous classifiers. The vectors are much more closely clustered around the hyperplane as well. Unlike the previous classifier, the linear separation is clearer between the ADL vectors and the fall vectors. This will generate much higher accuracy, and more importantly, higher precision in classification. The outliers are still present but are on the correct side of the decision boundary. One concern with the narrowness of the hyperplane is the possibility of misclassification in the case of vectors that are slightly further away from the support vectors. We will want to examine recall to ensure this is not a potential weakness.
+	
 \begin{figure}
 	\centering
 	\includegraphics[width=12cm, height=10cm]{images/Classification/linear_classifier_boundary_avc.png} 
@@ -407,7 +408,7 @@ PLACEHOLDER!!!! ADD COMMENTARY TO SVM DECISION BOUNDARY ON AVC \& WVC PLOT
         
 
 % Put in discussion when talking about outliers - show activity labeled K-means plot and talk about jumping -> 
-%    There are a significant grouping of ADL outliers. For the time-being, we will ignore these and proceed with classification. Since we have had the greatest success with the SVM linear kernel, we will classify the centroid distances of the AVC model with this classifier as well.
+    There are a significant grouping of ADL outliers. For the time-being, we will ignore these and proceed with classification. Since we have had the greatest success with the SVM linear kernel, we will classify the centroid distances of the AVC model with this classifier as well.
 
 	With this model there was significantly improved accuracy: over 78 percent. The linear decision plot appears similar to the magnitude model, although more of the ADL values appear to be further from the boundary. This aligns with what is seen in the cluster plot, and could explain the increase in accuracy from the previous model. A final comparison of our best model results is below.
     
@@ -427,7 +428,7 @@ PLACEHOLDER!!!! ADD COMMENTARY TO SVM DECISION BOUNDARY ON AVC \& WVC PLOT
  	\end{center}
 \end{table}     
 
-
+Across the board the AVC pipeline model performed the best. As mentioned previously, the accuracy of the mode is above 78 percent. More importantly, our major objective of addressing precision issues with current fall detection algorithms has been addressed, with the AVC model producing 74 percent precision. This indicates a low rate of false positives given the rate of correct classifications. Revisiting the concern with the narrow hyperplane from this model, we observe a recall of over 82 percent. This indicates the model does well with selecting relevant items, assuaging fears of misclassification in the event our vectors are further away from the hyperplane. Finally, the F1 score is comparable to the overall accuracy, indicating a well-rounded model that is accurate, precise, and generalizes well.
 
 \section{Discussion}
 
@@ -450,7 +451,7 @@ Summary of model approach % add quick summary of methodology from figure 5
 % Add high-pass, low-pass, or Butterworth band filter to remove gravity etc.
 
 % Optimize AVC window to capture sudden changes
-	Additionally, outliers were observed in the formed AVC and WVC centroid clusters. These data points with larger vector change values for acceleration and angular velocity were identified to be from trials of activity ten as shown in figure five. Activity 10 from the data collection process was jumping which consists of continuous activity 
+	Additionally, outliers were observed in the formed AVC and WVC centroid clusters. These data points with larger vector change values for acceleration and angular velocity were identified to be from trials of activity ten as shown in figure five. Activity 10 from the data collection process was jumping which consists of sudden acceleration changes. Given the nature of AVCs, it is expected that this activity would generate large vectors, which would then manifest as outliers in a cluster.
 
 \begin{figure} 
 	\centering
