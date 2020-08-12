@@ -433,7 +433,7 @@ Across the board the AVC pipeline model performed the best. As mentioned previou
 \section{Discussion}
 
 %add more detail and citations
-Summary of model approach % add quick summary of methodology from figure 5
+% add quick summary of methodology from figure 5
 
 \begin{figure}
 	\centering
@@ -442,7 +442,13 @@ Summary of model approach % add quick summary of methodology from figure 5
 	\label{Figure 5: Classification Pipeline}
 \end{figure}
 
-	As mentioned in the results, our final model (AVC to K-Means to SVM) had an accuracy of about 78 percent. Although there is sparse research on the efficacy of existing fall detection systems outside laboratory settings, owing to many manufacturers being reticent to releasing that information, many consumer studies report similar accuracy to our result. However, unlike these products our model is much more precise, at 74 percent.
+	As mentioned in the results, our final model (AVC to K-Means to SVM) had an accuracy of about 78 percent. Although there is sparse research on the efficacy of existing fall detection systems outside laboratory settings, owing to manufacturers being reticent to releasing that information, many consumer studies report similar accuracy to our result. However, unlike these products our model is much more precise, at 74 percent. 
+	
+	A potential concern was noted when plotting the decision boundary - the possibility of misclassification due to narrowness in the hyperplane. Although the data on which we trained the model produced a good recall score (over 82 percent) it is worth exploring some possible strategies to make the model more adaptable and resilient. Outliers were observed in the formed AVC and WVC centroid clusters. These data points with larger vector change values for acceleration and angular velocity were identified to be from trials of activity ten as shown in figure five. Activity 10 from the data collection process was jumping which consists of sudden acceleration changes. Given the nature of AVCs, it is expected that this activity would generate large vectors, which would then manifest as outliers in a cluster.
+	
+	Two ways to address this in future models are capturing sudden changes and accounting for gravity. As observed in the outliers in the cluster model, which translated into the classifier, activities that involve sudden changes in acceleration, such as jumping, might skew the model. Two possible ways to address this would be to optimize the AVC window, ensuring that our signal processing time is consistent with the time of acceleration. The other is to adapt the AVC capture window into a multi-phase fall model: free fall, impact, and rest. This would contextualize each step and allow for more accurate comparisons between each phase between models and ADL.
+	
+	Additionally, we will want to adjust our vectors for gravity to normalize the AVCs in future clustering. Signal processing techniques, such as band-pass and Butterworth filters remove constants and noise from data (such as gravity) to process deltas in a more effective manner. Incorporating such techniques will enable the model to classify between falls and ADLs by examining acceleration changes in as sterile an environment as possible.
 
 	For a next step, we would like to see our model adopted into wearables for comparison to existing products, for the eventual purpose of building an autonomous call system to summon emergency medical services, in the event a fall results in incapacitation. The imprecision of existing systems is a barrier for such a development, and we believe introducing a more precise model such as ours will ensure broader adoption by rectifying this issue.
 
@@ -450,8 +456,7 @@ Summary of model approach % add quick summary of methodology from figure 5
 
 % Add high-pass, low-pass, or Butterworth band filter to remove gravity etc.
 
-% Optimize AVC window to capture sudden changes
-	Additionally, outliers were observed in the formed AVC and WVC centroid clusters. These data points with larger vector change values for acceleration and angular velocity were identified to be from trials of activity ten as shown in figure five. Activity 10 from the data collection process was jumping which consists of sudden acceleration changes. Given the nature of AVCs, it is expected that this activity would generate large vectors, which would then manifest as outliers in a cluster.
+% Optimize AVC window to capture sudden changes 
 
 \begin{figure} 
 	\centering
