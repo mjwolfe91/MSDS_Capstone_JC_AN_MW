@@ -78,7 +78,7 @@ The elderly are most prone to the dangers of falling that may significantly impa
 
 % May need to restructure this final paragraph in Introduction
 	%Intro -> Background (Related Works) -> Methods (Data) -> Results (Model comparsions) -> Discussion (Ethics) -> Conclusions
-	The remainder of this paper is organized into the following sections. Section two will be broken down into two sections: a discussion of related studies that have guided our work and analyzed the efficacy of previous implementations of autonomous fall-detection systems, and an explanation of the methods we will use to develop our solution. Section three will discuss methodologies: how the data was collected along with its structures and attributes, as well as a discussion on the different approaches utilized in our analysis and a high-level overview of the machine learning concepts applied in our algorithms. Section four will present our findings along with relevant visualizations, the results of our research, and a comparative analysis of the competing models. Section five will wrap up our analysis with ethical considerations of handling personal health data recorded from wearable wrist devices as well as potential implications and next steps. Section six will summarize our main conclusions and potential ideas to refine our proposed solution. 
+	The remainder of this paper is organized into the following sections. Section two will discuss related studies that have guided our work and analyzed the efficacy of previous implementations of autonomous fall-detection systems. Section three will discuss methodologies: how the data was collected along with its structures and processing methods, as well as a high-level overview of the machine learning concepts applied to develop our solution. Section four will present the results of our findings accompanied with tables and figures to summarize the analysis. Section five will wrap up our analysis with ethical considerations and potential implications of handling personal health data recorded from wearable wrist devices. Section six will summarize our main conclusions and potential ideas to refine our proposed solution. 
 % Ethics
 	% Testing elderly patients: the experiments and activity are more taxing for them compared to relatively younger individuals. Could be a possible explanation for why datasets do not heavily test on that specific age group despite that being the targeted population for applicable use.
 	% Privacy concerns with sharing constant GPS location
@@ -330,9 +330,9 @@ Eleven clusters were initially tested to simulate the 11 different experimental 
 \end{table} 
 
 \subsubsection{Support Vector Machine Classification} 
-	Support Vector Machines are a supervised machine learning technique wherein, given a 2D feature space, a decision line (hyperplane) is defined to separate one class from another. It requires labelled training data to define categorical classes. Once these are received, the vectors  and implements transformation kernels to project the data onto higher-dimensional spaces so a separating hyperplane can be determined. The hyperplane is best defined as a decision boundary that maximizes the distance of the data points nearest the boundary line in each class label. 
+	Support Vector Machines is a supervised machine learning technique that projects labeled training data onto a higher dimensional space. A decision boundary is then defined to linearly separate categorical class labels by maximizing its orthogonal distances from support vectors. In two dimensions the decision boundary can be defined as a line, but in n-dimensions it is best defined as a hyperplane with (n-1)-dimensions. Support vectors are the data instances closest to the defined closest to the boundary line on each side of the class labels. 
 
-	With non-linearly separable data, kernel tricks are employed to map the data into a different dimensionality space so that the SVM algorithm can better identify a decision boundary capable of linearly separating classes. A variety of kernels (i.e., linear, sigmoid, polynomial, Gaussian) are tested on the k-means feature space to evaluate the best parameters for the binary classification of falls from activities of daily living. Accuracy, recall, precision, and f1-score are used as comparative metrics to quantify the performance of competing models. In order to leverage the k-means labeling of fall and ADL threshold values, the centroid distance vectors from the different data processing methods were fed into a Support Vector Classifier (SVC) as input criteria.
+	With non-linearly separable data, transformation kernel tricks are employed to map the data into a different dimensionality space so that the SVM algorithm can better identify a hyperplane capable of linearly separating classes. A variety of kernels (i.e., linear, sigmoid, polynomial, Gaussian) are tested on the k-means feature space to evaluate the best parameters for the binary classification of falls from activities of daily living. Accuracy, recall, precision, and F\textsubscript{1} score are used as comparative metrics to quantify the performance of competing models. In order to leverage the k-means labeling of fall and ADL threshold values, the centroid distance vectors from the different data processing methods were fed into a Support Vector Classifier (SVC) as input criteria.
 
 %	We use a SVM to classify centroid distances generated from k-means to predict falls vs ADLs. We will need to test a variety of kernels, since the k-means feature space may or may not be linear, quadratic, or possibly separable in a 3D feature space. Accuracy and precision are used as comparative metrics to quantify how competing models .
 
@@ -340,7 +340,7 @@ Eleven clusters were initially tested to simulate the 11 different experimental 
     
 \section{Results}
 
-The triaxial provided two distance vectors per axis (since one cluster was provided for each), for a total of six vectors. PCA was applied to the six feature vectors to reduce the data dimensionality of the binary classification task to two components. These principal component values were then used to compute 2 k-means centroid distances for fall and ADL class labels in an SVM classifier tested with different kernels. The results are represented in the 3D scatterplot shown in Figure 2:
+The raw triaxial measurements provided two distance vectors per axis for a total of six vectors. PCA was applied to the six feature vectors to reduce the data dimensionality of the binary classification task to two components. These principal component values were then used to compute 2 k-means centroid distances for fall and ADL class labels in an SVM classifier tested with different kernels. The results are represented in the 3D scatterplot shown in Figure two.
 
 %To reduce dimensionality in the classification, we applied Principle Component Analysis with two components, representing each sensor signal in order to reduce the dimensionality required for classification.
 %\begin{table}
@@ -369,17 +369,17 @@ The triaxial provided two distance vectors per axis (since one cluster was provi
 	Many of the predictions are clustered around a single point in space and are not easily separated linearly by projecting to a higher dimensional plane. This is reflected in the low accuracy around 50 percent regardless of the kernel selected for SVM classification. Given this low performance and lack of response to parameter tuning, maximum magnitude signals from each trial were instead used as a processing step to extract threshold values for classification.
 	
 	Linear, sigmoid, polynomial, and Gaussian kernels were again tested on the maximum magnitude signals. These values provided higher accuracy than the PCA components of raw triaxial sensor measurements with the linear kernel yielding the most significant performance in comparison to the other kernels at 67\%. The linear kernel yielded the most significant performance improvement in comparison to the other kernels and the raw triaxial sensor measurements. Figure three shows the hyperplane decision boundary from the SVM classifier on maximum magnitude signal thresholds using a linear kernel.
-
-	Many of the data points appear to be clustered in an elbow shape around the origin, with most representing the majority class. This likely accounts for the improvement in accuracy, but does not significantly increase the precision. To account for some of these issues, we shifted our threshold analysis to vector change features from the accelerometer and gyroscope sensors to better measure motion intensity. Acceleration Vector Change (AVC) and Angular Velocity Vector Change (WVC) values per trial were pushed through the classification pipeline to identify class labels through k-means and predict fall instances from ADLs in a binary SVM classifier.
 	
-	%Similar to the triaxial model, the magnitude cluster model provided two distance vectors, but since we had created one cluster model using both magnitude thresholds, there was no need for dimensionality reduction. Therefore, the distance vectors were passed to the SVM classifier in their raw form. Again, we repeated these tests on linear, polynomial, and sigmoid kernels. We observed significant improvement in using a linear kernel on these distances. Although still not very accurate, a roughly 67 percent accuracy performs much better than the other kernels and the triaxial component model. A plot of the decision boundary is below.
-
 \begin{figure}
 	\centering
 	\includegraphics[width=12cm, height=10cm]{images/Classification/linear_classifier_boundary.png} 
 	\caption{: Linear SVM Classifier of Maximum Magnitude Thresholds}
-	\label{Figure 3: Decision Boundary of Linear Kernel SVM with Magnitude Thresholds}
-\end{figure} 
+	\label{Figure 3: Linear Kernel SVM with Magnitude Thresholds Hyperplane}
+\end{figure} 	
+
+	Many of the data points appear to be clustered in an elbow shape around the origin, with most representing the majority class. This likely accounts for the improvement in accuracy, but does not significantly increase the precision. To account for some of these issues, we shifted our threshold analysis to vector change features from the accelerometer and gyroscope sensors to better measure motion intensity. Acceleration Vector Change (AVC) and Angular Velocity Vector Change (WVC) values per trial were pushed through the classification pipeline to identify class labels through k-means and predict fall instances from ADLs in a binary SVM classifier.
+	
+	%Similar to the triaxial model, the magnitude cluster model provided two distance vectors, but since we had created one cluster model using both magnitude thresholds, there was no need for dimensionality reduction. Therefore, the distance vectors were passed to the SVM classifier in their raw form. Again, we repeated these tests on linear, polynomial, and sigmoid kernels. We observed significant improvement in using a linear kernel on these distances. Although still not very accurate, a roughly 67 percent accuracy performs much better than the other kernels and the triaxial component model. A plot of the decision boundary is below.
     
 %\begin{table}
  %	\begin{center}
@@ -397,20 +397,20 @@ The triaxial provided two distance vectors per axis (since one cluster was provi
  %	\end{center}
 %\end{table} 
 		
-	The AVC cluster classification produces a much more narrow hyperplane, along with the same elbow shape seen in previous classifiers. The vectors are much more closely clustered around the hyperplane as well. Unlike the previous classifier, the linear separation is clearer between the ADL vectors and the fall vectors. This will generate much higher accuracy, and more importantly, higher precision in classification. The outliers are still present but are on the correct side of the decision boundary. One concern with the narrowness of the hyperplane is the possibility of misclassification in the case of vectors that are slightly further away from the support vectors. We will want to examine recall to ensure this is not a potential weakness.
+	Figure four shows that the k-means centroid classification task using vector change features produces a much narrower hyperplane, along with the same elbow shape seen in the previous classifier. The vectors are much more closely clustered around the hyperplane as well. Unlike the previous classifier, the linear separation is more clear between the ADL vectors and the fall vectors. This will yield higher accuracy, and more importantly, higher precision on the classification task. The outliers are still present but are on the correct side of the decision boundary. One concern with the narrowness of the hyperplane is the possibility of misclassification in the case of vectors that are slightly further away from the support vectors. We will want to examine recall to ensure this is not a potential weakness.
 	
 \begin{figure}
 	\centering
 	\includegraphics[width=12cm, height=10cm]{images/Classification/linear_classifier_boundary_avc.png} 
 	\caption{: Linear SVM Classifier of AVC and WVC}
-	\label{Figure 4: Linear SVM Classifier of AVC and WVC Values per Trial}
+	\label{Figure 4: Linear Kernel SVM with AVC and WVC Hyperplane}
 \end{figure}
         
 
 % Put in discussion when talking about outliers - show activity labeled K-means plot and talk about jumping -> 
-    There are a significant grouping of ADL outliers. For the time-being, we will ignore these and proceed with classification. Since we have had the greatest success with the SVM linear kernel, we will classify the centroid distances of the AVC model with this classifier as well.
+    %There are a significant grouping of ADL outliers. For the time-being, we will ignore these and proceed with classification. Since we have had the greatest success with the SVM linear kernel, we will classify the centroid distances of the AVC model with this classifier as well.
 
-	With this model there was significantly improved accuracy: over 78 percent. The linear decision plot appears similar to the magnitude model, although more of the ADL values appear to be further from the boundary. This aligns with what is seen in the cluster plot, and could explain the increase in accuracy from the previous model. A final comparison of our best model results is below.
+	Despite the presence of outliers, this vector change model performed the best with an overall accuracy of 78.4\%. The linear decision plot appears similar to the magnitude model, but predict ADL labels further away from the decision boundary. This aligns with what is seen in the cluster plot, and could explain the increase in accuracy from the previous model. A final comparison of the performance metrics from our top-competing models is shown in table five.
     
 \begin{table}
  	\begin{center}
@@ -418,17 +418,17 @@ The triaxial provided two distance vectors per axis (since one cluster was provi
 		\label{table5}
 		\begin{tabular}{|c|c|c|c|c|c|}
 			\toprule
-			Pre-Processing & Kernel Type & Accuracy Percent & Precision Percent & Recall Percent & F1 Score\\
+			Pre-Processing & Kernel Type & Accuracy & Precision & Recall & F\textsubscript{1} Score\\
 			\midrule
-			AVC & Linear Kernel & \makecell{78.400} & \makecell{74.200} & \makecell{82.800} & \makecell{78.300}\\
-			Magnitude Threshold & Linear Kernel & \makecell{67.000} & \makecell{63.800} & \makecell{69.00} & \makecell{66.300}\\
-			Magnitude Threshold & Gaussian Kernel & \makecell{58.900} & \makecell{58.500} & \makecell{43.700} & \makecell{50.000}\\
+			AVC & Linear Kernel & \makecell{78.400\%} & \makecell{74.200\%} & \makecell{82.800\%} & \makecell{78.300\%}\\
+			Magnitude Threshold & Linear Kernel & \makecell{67.000\%} & \makecell{63.800\%} & \makecell{69.00\%} & \makecell{66.300\%}\\
+			Magnitude Threshold & Gaussian Kernel & \makecell{58.900\%} & \makecell{58.500\%} & \makecell{43.700\%} & \makecell{50.000\%}\\
 			\bottomrule
 		\end{tabular}
  	\end{center}
 \end{table}     
 
-Across the board the AVC pipeline model performed the best. As mentioned previously, the accuracy of the mode is above 78 percent. More importantly, our major objective of addressing precision issues with current fall detection algorithms has been addressed, with the AVC model producing 74 percent precision. This indicates a low rate of false positives given the rate of correct classifications. Revisiting the concern with the narrow hyperplane from this model, we observe a recall of over 82 percent. This indicates the model does well with selecting relevant items, assuaging fears of misclassification in the event our vectors are further away from the hyperplane. Finally, the F1 score is comparable to the overall accuracy, indicating a well-rounded model that is accurate, precise, and generalizes well.
+	The linear kernel SVM classification on k-means centroid distances of vector change features showed significant improvement across all metrics from previous models. This model appears to address some of the precision issues in current fall detection algorithms on solely wrist sensor data with a competitive measure of 74.2\% indicating low false positive rates. Precision weighs the costs of false positive predictions (i.e., predicting an activity of daily living to be a fall). Recall weighs the costs of false negative predictions (i.e., predicting a fall to be an activity of daily living). At 82.8\% recall, our model performs even better in regards to actually identifying relevant instances as falls and not mislabelling them as an ADL. The F\textsubscript{1} score metric is the harmonic mean of precision and recall, meaning it weighs model performance with false positive and false negative costs over true negative predictions. The F\textsubscript{1} Score of 78.3\% is comparable to the overall classification accuracy of 78.4\%, indicating a balanced model that is accurate, precise, and generalizable. 
 
 \section{Discussion}
 
@@ -437,12 +437,12 @@ Across the board the AVC pipeline model performed the best. As mentioned previou
 
 \begin{figure}
 	\centering
-	\includegraphics[width=7cm, height=10cm]{images/ClassificationPipeline.png} 
+	\includegraphics[width=5cm, height=8cm]{images/ClassificationPipeline.png} 
 	\caption{: 3-Phased Model Approach}
 	\label{Figure 5: Classification Pipeline}
 \end{figure}
 
-	As mentioned in the results, our final model (AVC to K-Means to SVM) had an accuracy of about 78 percent. Although there is sparse research on the efficacy of existing fall detection systems outside laboratory settings, owing to manufacturers being reticent to releasing that information, many consumer studies report similar accuracy to our result. However, unlike these products our model is much more precise, at 74 percent. 
+As mentioned in the results, our final model (AVC to K-Means to SVM) had an accuracy of about 78 percent. Although there is sparse research on the efficacy of existing fall detection systems outside laboratory settings, owing to manufacturers being reticent to releasing that information, many consumer studies report similar accuracy to our result. However, unlike these products our model is much more precise, at 74 percent. 
 	
 	A potential concern was noted when plotting the decision boundary - the possibility of misclassification due to narrowness in the hyperplane. Although the data on which we trained the model produced a good recall score (over 82 percent) it is worth exploring some possible strategies to make the model more adaptable and resilient. Outliers were observed in the formed AVC and WVC centroid clusters. These data points with larger vector change values for acceleration and angular velocity were identified to be from trials of activity ten as shown in figure five. Activity 10 from the data collection process was jumping which consists of sudden acceleration changes. Given the nature of AVCs, it is expected that this activity would generate large vectors, which would then manifest as outliers in a cluster.
 	
@@ -461,7 +461,7 @@ Across the board the AVC pipeline model performed the best. As mentioned previou
 \begin{figure} 
 	\centering
 	\includegraphics[width=12cm, height=10cm]{images/VC_11clusters.png} 
-	\caption{: AVC \% WVC highlighted by activity}
+	\caption{: AVC \& WVC highlighted by activity}
 	\label{Figure 6: K-Means Clusters of AVC and WVC Values per Trial}
 \end{figure}
 
@@ -470,7 +470,7 @@ Across the board the AVC pipeline model performed the best. As mentioned previou
 
 \subsection{Ethics}
 
-    One major ethical consideration, both within this analysis and others on fall detection, is bias within the data. Pre-existing publicly available datasets often contain data sourced from healthy adults who predominantly skew younger and male.\cite{casilari2017analysis} Studies that generate their own data frequently recruit people of similar demographics because of the health and safety concerns posed by attempting to source data from the elderly.\cite{gjoreski2016accurately} Any data that is generated by older adults is often limited to ADLs as opposed to falls. Although volunteers are often coached to simulate fall behavior in a similar fashion to the elderly, factors like predefined movements, test environments that do not well approximate where the elderly are most likely to fall, and the presence of safety precautions like mattresses could all result in simulated fall data that does not actually match the reality.\cite{casilari2017analysis} Kangas et al. demonstrate that the profiles for a small number of real-life falls look similar to those of simulated ones.\cite{kangas2008comparison} However, we caution against assuming this extends to other simulated data and recommend more investigation into the possible influence of demographic bias and safety measures.
+One major ethical consideration, both within this analysis and others on fall detection, is bias within the data. Pre-existing publicly available datasets often contain data sourced from healthy adults who predominantly skew younger and male.\cite{casilari2017analysis} Studies that generate their own data frequently recruit people of similar demographics because of the health and safety concerns posed by attempting to source data from the elderly.\cite{gjoreski2016accurately} Any data that is generated by older adults is often limited to ADLs as opposed to falls. Although volunteers are often coached to simulate fall behavior in a similar fashion to the elderly, factors like predefined movements, test environments that do not well approximate where the elderly are most likely to fall, and the presence of safety precautions like mattresses could all result in simulated fall data that does not actually match the reality.\cite{casilari2017analysis} Kangas et al. demonstrate that the profiles for a small number of real-life falls look similar to those of simulated ones.\cite{kangas2008comparison} However, we caution against assuming this extends to other simulated data and recommend more investigation into the possible influence of demographic bias and safety measures.
 	
 	Another potential ethical consideration is privacy. In a similar fashion to how personalized medicine tailors to individual patients, a user-centric model that trains on the wearer's baseline ADL movements has been suggested to perform better than a generalized one.\cite{villar2019online} Manufacturers of wrist wearables could allow users to opt-in to providing their real-life ADL data to refine the generalized model that the user-centric model works with. However, this introduces realistic concerns over whether user information is properly removed or anonymized in the event of data breaches.
 
@@ -479,13 +479,13 @@ Across the board the AVC pipeline model performed the best. As mentioned previou
 %\section{Discussion}
 \section{Conclusion}
 
-The overall accuracy of the SVM classifier was low, until the AVC pre-processing step was added. The final, most accurate classifier was a linear kernel on AVC cluster, at about 77 percent. As mentioned above, there are many points clustered near the origin, suggesting a high rate of true negatives contributing to the overall accuracy. Additionally, another possible method could be Gaussian mixture model, which would essentially create both components (labelling plus classification) in a single process, although we would need to indicate or compute a threshold of probability for this to work practically.
+	The overall accuracy of the SVM classifier was low, until the AVC pre-processing step was added. The final, most accurate classifier was a linear kernel on AVC cluster, at about 77 percent. As mentioned above, there are many points clustered near the origin, suggesting a high rate of true negatives contributing to the overall accuracy. Additionally, another possible method could be Gaussian mixture model, which would essentially create both components (labelling plus classification) in a single process, although we would need to indicate or compute a threshold of probability for this to work practically.
 
-The high number of outliers in the cluster analysis is also worth mentioning. Interestingly, most of these outliers corresponded with Activity ten, or the jumping ADL. Although removing this does not improve accuracy by much, it does present an interesting observation: clusters of AVCs are more linearly separable for fall-like acceleration versus other activities.  
+	The high number of outliers in the cluster analysis is also worth mentioning. Interestingly, most of these outliers corresponded with Activity ten, or the jumping ADL. Although removing this does not improve accuracy by much, it does present an interesting observation: clusters of AVCs are more linearly separable for fall-like acceleration versus other activities.  
 
-To further our analysis and the performance of our fall detection algorithm, better signal processing techniques should be employed to represent the time series data in each trial. In this analysis, taking the maximum values of the magnitude of the sensor signal caused all other measurements in each trial besides the peak signal to be discarded. Combinations of high-pass filters on the time series and regression analysis to extract a singular representative value for each trial are recommended as improvements over the current signal processing technique of taking the maximum value. 
+	To further our analysis and the performance of our fall detection algorithm, better signal processing techniques should be employed to represent the time series data in each trial. In this analysis, taking the maximum values of the magnitude of the sensor signal caused all other measurements in each trial besides the peak signal to be discarded. Combinations of high-pass filters on the time series and regression analysis to extract a singular representative value for each trial are recommended as improvements over the current signal processing technique of taking the maximum value. 
 
-We propose a novel autonomous fall-detection system using algorithms trained on data extracted from wireless accelerometer and gyroscope wrist sensors as a potential solution to address these concerns. When our algorithm detects a fall and the user is unable to confirm consciousness through the wrist device, it could trigger an alert to dispatch local paramedics to the device's exact GPS location for an emergency evaluation and immediate medical intervention. %The algorithm is tasked with a binary classification that will discriminate actual falls from typical activities of daily living: bathing, ambulatory, transferring, toileting, eating, and dressing.
+	We propose a novel autonomous fall-detection system using algorithms trained on data extracted from wireless accelerometer and gyroscope wrist sensors as a potential solution to address these concerns. When our algorithm detects a fall and the user is unable to confirm consciousness through the wrist device, it could trigger an alert to dispatch local paramedics to the device's exact GPS location for an emergency evaluation and immediate medical intervention. %The algorithm is tasked with a binary classification that will discriminate actual falls from typical activities of daily living: bathing, ambulatory, transferring, toileting, eating, and dressing.
 
 
 
