@@ -105,11 +105,11 @@ Fall detection is a rich field with considerable depth and breadth. Much work ha
     %\includegraphics[width=2cm, height=.5cm]{images/acc_formula.png}
     %\end{figure}
     
-    \begin{equation*}
-    	acc_{x} = A_{x} + g
-    \end{equation*}
+\begin{equation*}
+	acc_{x} = A_{x} + g
+\end{equation*}
     
-    Where acc is the overall acceleration, A represents the activity-based acceleration and g represents gravity. A low-pass Butterworth filter would decompose this equation into A and g, and allow the researcher to determine if A represents a fall or an ADL. This enables researchers to a subject's effect on its acceleration in space. After pre-processing, the researchers compared various classifiers and their efficacy in predicting falls and found SVM to be the most accurate at 99.98\%, further verifying the viability of SVM classifiers in detecting falls.\cite{hussainelderly2019}
+Where acc is the overall acceleration, A represents the activity-based acceleration and g represents gravity. A low-pass Butterworth filter would decompose this equation into A and g, and allow the researcher to determine if A represents a fall or an ADL. This enables researchers to a subject's effect on its acceleration in space. After pre-processing, the researchers compared various classifiers and their efficacy in predicting falls and found SVM to be the most accurate at 99.98\%, further verifying the viability of SVM classifiers in detecting falls.\cite{hussainelderly2019}
     
     %Aside from data processing techniques, another widely explored field in fall detection is the number, placement, and type of sensor used to detect falls. As mentioned above, Gjoreski's study uses sensors in the waist, thigh, wrist, and head. Each sensor is found to have different levels of accuracy depending on which model was uses. For example, Random Forest on the head-mounted sensor was the most accurate of all models and sensors. However, using SVM the left-wrist-based sensor produced a fairly accurate model.\cite{gjoreski2016accurately} For our purposes we will focus on a sensor based on the left wrist. From a practicality standpoint this is the best approach. Popular products today equipped with fall detection technology are generally smart watches, worn on the left wrist. Given that our algorithm is likely to see broader adoption if geared towards smart watches, we will focus on methods that are based on these types of sensors.
 
@@ -166,7 +166,7 @@ The UP-Fall Detection dataset is used to analyze and compare the different metho
 	\end{center}
 \end{table}
 
-	They used a Mbientlab MetaSensor to collect the raw data from a triaxial accelerometer and gyroscope at a sampling rate of 100 Hz. The data collection process spanned across four weeks in the summer of 2018 and was conducted on the third floor of the Faculty of Engineering building at Universidad Panamericana in Mexico City.\cite{martinez2019up} Their study enlisted 17 healthy young adults to perform 11 different physical activities. The volunteers consisted of nine males and eight females ranging from 18-24 years old with the average height of 1.66 meters and the average weight of 66.8 kilograms. The only participant that was left-hand dominant was Subject three. Table one provides a description for each subject that participated in the study.
+They used a Mbientlab MetaSensor to collect the raw data from a triaxial accelerometer and gyroscope at a sampling rate of 100 Hz. The data collection process spanned across four weeks in the summer of 2018 and was conducted on the third floor of the Faculty of Engineering building at Universidad Panamericana in Mexico City.\cite{martinez2019up} Their study enlisted 17 healthy young adults to perform 11 different physical activities. The volunteers consisted of nine males and eight females ranging from 18-24 years old with the average height of 1.66 meters and the average weight of 66.8 kilograms. The only participant that was left-hand dominant was Subject three. Table one provides a description for each subject that participated in the study.
 	
 	Each subject performed three trials for every activity. The physical activities were selected to simulate six typical human activities of daily living and five common types of falls. The action of picking up an object was specifically tested since it is an activity that is commonly mistaken for a fall, and was performed once within a ten second interval per trial. The jumping activity was measured in 30 seconds intervals, while the other activities of daily living were all measured in 60 second time frames. The simulated falls were measured within ten second time frames with only one a single fall executed in each trial. Table two provides a summary of each activity's description and duration for each trial.
 
@@ -194,7 +194,7 @@ The UP-Fall Detection dataset is used to analyze and compare the different metho
 	\end{center}
 \end{table}
 
-	Table three shows the magnitudes of Subject one's acceleration and angular velocity signals from the wrist sensor for each simulated fall trial (activities one through five). The original accelerometer and gyroscope wrist sensor data was provided on along the x, y and z axis. These triaxial measurements were processed into a single magnitude vector for acceleration (a) and angular velocity (w) at each sensor measurement sample as shown in table three. The magnitude signals for each simulated fall trial performed by Subject one (activities one through five) are provided as examples. This processing step was done to reduce the data dimensions and identify potential sensor threshold values that can distinguish falls from ADLs through the following representation:
+Table three shows the magnitudes of Subject one's acceleration and angular velocity signals from the wrist sensor for each simulated fall trial (activities one through five). The original accelerometer and gyroscope wrist sensor data was provided on along the x, y and z axis. These triaxial measurements were processed into a single magnitude vector for acceleration (a) and angular velocity (w) at each sensor measurement sample as shown in table three. The magnitude signals for each simulated fall trial performed by Subject one (activities one through five) are provided as examples. This processing step was done to reduce the data dimensions and identify potential sensor threshold values that can distinguish falls from ADLs through the following representation:
 	
 \begin{equation*}
     	\vec{\mathbf{a}} = \sqrt{a_{x}^2 + a_{y}^2 + a_{z}^2}
@@ -225,7 +225,7 @@ The UP-Fall Detection dataset is used to analyze and compare the different metho
 	\end{center}
 \end{table}
 
-	The acceleration and angular velocity magnitude vector signals present as time series data of each simulated fall trial over the data collection interval. We use the peak value from these plot as potential threshold values to distinguish a fall from activities of daily living. However, the peaks occur at different maximum values for the five different types of simulated falls. The lower acceleration peaks for activities two and five with values of 3.0 and 3.5 appear to be a result of smaller distance displacements. The subject falls onto their knees from a standing position in activity 2 and falls from a seated position in activity five. In these two cases, the vertical displacement of the wrist sensor are smaller compared to the other falling simulations in which the subject falls from a standing position to the ground.
+The acceleration and angular velocity magnitude vector signals present as time series data of each simulated fall trial over the data collection interval. We use the peak value from these plot as potential threshold values to distinguish a fall from activities of daily living. However, the peaks occur at different maximum values for the five different types of simulated falls. The lower acceleration peaks for activities two and five with values of 3.0 and 3.5 appear to be a result of smaller distance displacements. The subject falls onto their knees from a standing position in activity 2 and falls from a seated position in activity five. In these two cases, the vertical displacement of the wrist sensor are smaller compared to the other falling simulations in which the subject falls from a standing position to the ground.
 
 	We also define threshold values with vector changes of the acceleration and angular velocity magnitude signals. Instead of training the sensor to detect when a certain magnitude is measured, the model learns to detect motion intensity through magnitude changes. The Acceleration Vector Change (AVC) and Angular Velocity Vector Change (WVC) features are defined as:
 
@@ -236,7 +236,7 @@ The UP-Fall Detection dataset is used to analyze and compare the different metho
 		WVC = \sum\limits_{i=1}^n \frac{| \vec{\mathbf{w}_{i}} - \vec{\mathbf{w}_{i-1}} |}{T_{n} - T_{0}}
 	\end{equation*} 
 
-	The absolute value of the summed differences between consecutive magnitude signals is divided by trial sampling period to produce the vector change value of a signal, where T\textsubscript{0} is the timestamp of the first data sample in a trial and T\textsubscript{n} is the last. When the sensors are not experiencing motion, the vector change for consecutive measurements will remain be constant. When motion is detected, the vector change value will measure the intensity of the motion with larger changes indicative of more forceful activity. 
+The absolute value of the summed differences between consecutive magnitude signals is divided by trial sampling period to produce the vector change value of a signal, where T\textsubscript{0} is the timestamp of the first data sample in a trial and T\textsubscript{n} is the last. When the sensors are not experiencing motion, the vector change for consecutive measurements will remain be constant. When motion is detected, the vector change value will measure the intensity of the motion with larger changes indicative of more forceful activity. 
 	
 	These processing steps resulted in 559 data instances that describe every trial executed by each of the 17 subjects for the 11 activities; two data points are missing because subject eight is missing sample signals for trials two and three in activity eleven. The raw triaxial sensor measurements, maximum magnitude values per trial, and signal vector changes were tested as candidate threshold values in our model. 
 	
@@ -330,7 +330,7 @@ Eleven clusters were initially tested to simulate the 11 different experimental 
 \end{table} 
 
 \subsubsection{Support Vector Machine Classification} 
-	Support Vector Machines is a supervised machine learning technique that projects labeled training data onto a higher dimensional space. A decision boundary is then defined to linearly separate categorical class labels by maximizing its orthogonal distances from support vectors. In two dimensions the decision boundary can be defined as a line, but in n-dimensions it is best defined as a hyperplane with (n-1)-dimensions. Support vectors are the data instances closest to the defined closest to the boundary line on each side of the class labels. 
+Support Vector Machines is a supervised machine learning technique that projects labeled training data onto a higher dimensional space. A decision boundary is then defined to linearly separate categorical class labels by maximizing its orthogonal distances from support vectors. In two dimensions the decision boundary can be defined as a line, but in n-dimensions it is best defined as a hyperplane with (n-1)-dimensions. Support vectors are the data instances closest to the defined closest to the boundary line on each side of the class labels. 
 
 	With non-linearly separable data, transformation kernel tricks are employed to map the data into a different dimensionality space so that the SVM algorithm can better identify a hyperplane capable of linearly separating classes. A variety of kernels (i.e., linear, sigmoid, polynomial, Gaussian) are tested on the k-means feature space to evaluate the best parameters for the binary classification of falls from activities of daily living. Accuracy, recall, precision, and F\textsubscript{1} score are used as comparative metrics to quantify the performance of competing models. In order to leverage the k-means labeling of fall and ADL threshold values, the centroid distance vectors from the different data processing methods were fed into a Support Vector Classifier (SVC) as input criteria.
 
@@ -366,7 +366,7 @@ The raw triaxial measurements provided two distance vectors per axis for a total
 	\label{Figure 2: 3D Plot of Linear Kernel SVM with Triaxial Distance Components}
 \end{figure}    
 
-	Many of the predictions are clustered around a single point in space and are not easily separated linearly by projecting to a higher dimensional plane. This is reflected in the low accuracy around 50 percent regardless of the kernel selected for SVM classification. Given this low performance and lack of response to parameter tuning, maximum magnitude signals from each trial were instead used as a processing step to extract threshold values for classification.
+Many of the predictions are clustered around a single point in space and are not easily separated linearly by projecting to a higher dimensional plane. This is reflected in the low accuracy around 50 percent regardless of the kernel selected for SVM classification. Given this low performance and lack of response to parameter tuning, maximum magnitude signals from each trial were instead used as a processing step to extract threshold values for classification.
 	
 	Linear, sigmoid, polynomial, and Gaussian kernels were again tested on the maximum magnitude signals. These values provided higher accuracy than the PCA components of raw triaxial sensor measurements with the linear kernel yielding the most significant performance in comparison to the other kernels at 67\%. The linear kernel yielded the most significant performance improvement in comparison to the other kernels and the raw triaxial sensor measurements. Figure three shows the hyperplane decision boundary from the SVM classifier on maximum magnitude signal thresholds using a linear kernel.
 	
@@ -377,7 +377,7 @@ The raw triaxial measurements provided two distance vectors per axis for a total
 	\label{Figure 3: Linear Kernel SVM with Magnitude Thresholds Hyperplane}
 \end{figure} 	
 
-	Many of the data points appear to be clustered in an elbow shape around the origin, with most representing the majority class. This likely accounts for the improvement in accuracy, but does not significantly increase the precision. To account for some of these issues, we shifted our threshold analysis to vector change features from the accelerometer and gyroscope sensors to better measure motion intensity. Acceleration Vector Change (AVC) and Angular Velocity Vector Change (WVC) values per trial were pushed through the classification pipeline to identify class labels through k-means and predict fall instances from ADLs in a binary SVM classifier.
+Many of the data points appear to be clustered in an elbow shape around the origin, with most representing the majority class. This likely accounts for the improvement in accuracy, but does not significantly increase the precision. To account for some of these issues, we shifted our threshold analysis to vector change features from the accelerometer and gyroscope sensors to better measure motion intensity. Acceleration Vector Change (AVC) and Angular Velocity Vector Change (WVC) values per trial were pushed through the classification pipeline to identify class labels through k-means and predict fall instances from ADLs in a binary SVM classifier.
 	
 	%Similar to the triaxial model, the magnitude cluster model provided two distance vectors, but since we had created one cluster model using both magnitude thresholds, there was no need for dimensionality reduction. Therefore, the distance vectors were passed to the SVM classifier in their raw form. Again, we repeated these tests on linear, polynomial, and sigmoid kernels. We observed significant improvement in using a linear kernel on these distances. Although still not very accurate, a roughly 67 percent accuracy performs much better than the other kernels and the triaxial component model. A plot of the decision boundary is below.
     
@@ -431,32 +431,22 @@ The raw triaxial measurements provided two distance vectors per axis for a total
 	The linear kernel SVM classification on k-means centroid distances of vector change features showed significant improvement across all metrics from previous models. This model appears to address some of the precision issues in current fall detection algorithms on solely wrist sensor data with a competitive measure of 74.2\% indicating low false positive rates. Precision weighs the costs of false positive predictions (i.e., predicting an activity of daily living to be a fall). Recall weighs the costs of false negative predictions (i.e., predicting a fall to be an activity of daily living). At 82.8\% recall, our model performs even better in regards to actually identifying relevant instances as falls and not mislabelling them as an ADL. The F\textsubscript{1} score metric is the harmonic mean of precision and recall, meaning it weighs model performance with false positive and false negative costs over true negative predictions. The F\textsubscript{1} Score of 78.3\% is comparable to the overall classification accuracy of 78.4\%, indicating a balanced model that is accurate, precise, and generalizable. 
 
 \section{Discussion}
-
-%add more detail and citations
 % add quick summary of methodology from figure 5
 
 \begin{figure}
 	\centering
 	\includegraphics[width=5cm, height=8cm]{images/ClassificationPipeline.png} 
 	\caption{: 3-Phased Model Approach}
-	\label{Figure 5: Classification Pipeline}
+	\label{Figure 5: Threshold Analysis Classification Pipeline}
 \end{figure}
+%@Michael cite this paragraph with link: just place link in url bracket and uncomment
+As mentioned in the results, our final 3-phased threshold analysis model approach (AVC to K-Means to SVM) had an accuracy of about 78 percent. Although there is sparse research on the efficacy of existing fall detection systems outside laboratory settings, owing to manufacturers being reticent to releasing that information, many consumer studies report similar accuracy to our result. However, unlike these products our model is much more precise, at 74 percent.%\footnote{\url{}} 
 
-As mentioned in the results, our final model (AVC to K-Means to SVM) had an accuracy of about 78 percent. Although there is sparse research on the efficacy of existing fall detection systems outside laboratory settings, owing to manufacturers being reticent to releasing that information, many consumer studies report similar accuracy to our result. However, unlike these products our model is much more precise, at 74 percent. 
+	A potential concern was noted when plotting the decision boundary - the possibility of misclassification due to narrowness in the hyperplane. Although the data on which we trained the model produced a good recall score (over 82\%) it is worth exploring some possible strategies to make the model more adaptable and resilient. Outliers were observed in the formed AVC and WVC k-means centroid clusters. These data points with larger vector change values for acceleration and angular velocity were identified to be from trials of activity ten as shown in figure five. Activity ten from the data iss jumping, which consists of continuous acceleration changes over the trial period. Given the nature in which vector changes were calculated over the entire trial period, a jumping activity would generate large a vector change value due to continuous motion over a 30 second window and manifest as outliers in the data.
+
+	In order to address this issue, an optimal window for vector change thresholds needs to be defined so that motion intensity can be better measured in small time frames. In this way, threshold values can better capture large, sudden changes in acceleration and angular velocity vectors that are more characteristic of fall events. This is an important distinction as the stimulated falls (activities one through five) are sampled in 10 second trial periods compared to the the majority of stimulated ADLs (activities six through eleven) are mostly sampled in 30 or 60 second trial periods. An optimal sampling window for vector change thresholds would improve signal processing by ensuring that sudden, large vector changes measured by the sensor can be attributed to intense motions rather than continuous motion.
 	
-	A potential concern was noted when plotting the decision boundary - the possibility of misclassification due to narrowness in the hyperplane. Although the data on which we trained the model produced a good recall score (over 82 percent) it is worth exploring some possible strategies to make the model more adaptable and resilient. Outliers were observed in the formed AVC and WVC centroid clusters. These data points with larger vector change values for acceleration and angular velocity were identified to be from trials of activity ten as shown in figure five. Activity 10 from the data collection process was jumping which consists of sudden acceleration changes. Given the nature of AVCs, it is expected that this activity would generate large vectors, which would then manifest as outliers in a cluster.
-	
-	Two ways to address this in future models are capturing sudden changes and accounting for gravity. As observed in the outliers in the cluster model, which translated into the classifier, activities that involve sudden changes in acceleration, such as jumping, might skew the model. Two possible ways to address this would be to optimize the AVC window, ensuring that our signal processing time is consistent with the time of acceleration. The other is to adapt the AVC capture window into a multi-phase fall model: free fall, impact, and rest. This would contextualize each step and allow for more accurate comparisons between each phase between models and ADL.
-	
-	Additionally, we will want to adjust our vectors for gravity to normalize the AVCs in future clustering. Signal processing techniques, such as band-pass and Butterworth filters remove constants and noise from data (such as gravity) to process deltas in a more effective manner. Incorporating such techniques will enable the model to classify between falls and ADLs by examining acceleration changes in as sterile an environment as possible.
-
-	For a next step, we would like to see our model adopted into wearables for comparison to existing products, for the eventual purpose of building an autonomous call system to summon emergency medical services, in the event a fall results in incapacitation. The imprecision of existing systems is a barrier for such a development, and we believe introducing a more precise model such as ours will ensure broader adoption by rectifying this issue.
-
-% Add AVC to multiphase-fall model: free fall, impact, rest phases
-
-% Add high-pass, low-pass, or Butterworth band filter to remove gravity etc.
-
-% Optimize AVC window to capture sudden changes 
+	Prior research investigated the use of Butterworth filters to remove noise such as gravitational acceleration from the raw triaxial sensor signals as an effective signal processing technique.\cite{hussainelderly2019} With noise effectively filtered from these signals, an acceleration component characteristic of just the detected motion can be isolated and provide vector change thresholds that are more representative of pure human motion. 
 
 \begin{figure} 
 	\centering
@@ -464,6 +454,16 @@ As mentioned in the results, our final model (AVC to K-Means to SVM) had an accu
 	\caption{: AVC \& WVC highlighted by activity}
 	\label{Figure 6: K-Means Clusters of AVC and WVC Values per Trial}
 \end{figure}
+	
+	A knowledge-based multiphase fall model approach has been researched to address many of the technical challenges of an autonomous fall detection system. The multiphase approach introduces free fall, impact and rest phases to characterize a fall.\cite{hsieh2017novel} These three phases characterize a window of a drastic increase in acceleration, succeeded by a rapid decrease in acceleration, and ends with an extended period of constant acceleration. In the free-fall phase, the acceleration vector change signal should mimic gravitational acceleration and could be extracted using Butterworth filters as previously discussed. The impact phase can be characterized as a large, negative vector change within a small time window. The rest phase should be attributed with a vector change value of 0 over a few seconds. Applying vector change features and machine learning based approaches to this multiphase model potentially offers a potentially viable solution to an autonomous fall detection system developed from threshold analysis of wrist sensor data.
+
+	As a real-world application, our model can be integrated into modern-day wearable technologies such as smartwatches to leverage their built-in Global Positioning System (GPS). In the event a fall results in incapacitation, the autonomous fall detection system can dispatch emergency medical services to the pinpoint location of the device. The imprecision of existing systems is a barrier for such a development, and we believe introducing a more precise model such as ours will ensure broader adoption by rectifying this issue.
+
+% Add AVC to multiphase-fall model: free fall, impact, rest phases
+
+% Add high-pass, low-pass, or Butterworth band filter to remove gravity etc.
+
+% Optimize AVC window to capture sudden changes 
 
 	%Similar to previous pre-processing methods, we still see significant outliers, categorically on Activity Ten (jumping). Given that this new pre-processing step would produce larger vector changes for activities that involve sudden acceleration changes, this is expected. We will proceed with classification.
 
@@ -479,9 +479,9 @@ One major ethical consideration, both within this analysis and others on fall de
 %\section{Discussion}
 \section{Conclusion}
 
-	The overall accuracy of the SVM classifier was low, until the AVC pre-processing step was added. The final, most accurate classifier was a linear kernel on AVC cluster, at about 77 percent. As mentioned above, there are many points clustered near the origin, suggesting a high rate of true negatives contributing to the overall accuracy. Additionally, another possible method could be Gaussian mixture model, which would essentially create both components (labelling plus classification) in a single process, although we would need to indicate or compute a threshold of probability for this to work practically.
+The overall accuracy of the SVM classifier was low, until the AVC pre-processing step was added. The final, most accurate classifier was a linear kernel on AVC cluster, at 78.4\% percent. As mentioned above, there are many points clustered near the origin, suggesting a high rate of true negatives contributing to the overall accuracy. Additionally, another possible method could be Gaussian mixture model, which would essentially create both components (labelling plus classification) in a single process, although we would need to indicate or compute a threshold of probability for this to work practically.
 
-	The high number of outliers in the cluster analysis is also worth mentioning. Interestingly, most of these outliers corresponded with Activity ten, or the jumping ADL. Although removing this does not improve accuracy by much, it does present an interesting observation: clusters of AVCs are more linearly separable for fall-like acceleration versus other activities.  
+	The high number of outliers in the cluster analysis is also worth mentioning. Interestingly, most of these outliers corresponded with Activity ten, or the jumping activity. Although removing this does not improve accuracy by much, it does present an interesting observation: clusters of AVCs are more linearly separable for fall-like acceleration versus other activities.  
 
 	To further our analysis and the performance of our fall detection algorithm, better signal processing techniques should be employed to represent the time series data in each trial. In this analysis, taking the maximum values of the magnitude of the sensor signal caused all other measurements in each trial besides the peak signal to be discarded. Combinations of high-pass filters on the time series and regression analysis to extract a singular representative value for each trial are recommended as improvements over the current signal processing technique of taking the maximum value. 
 

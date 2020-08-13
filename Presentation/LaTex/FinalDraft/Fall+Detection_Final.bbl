@@ -33,6 +33,11 @@ Gjoreski, M., Gjoreski, H., Lu{\v{s}}trek, M., Gams, M.: How accurately can
   your wrist device recognize daily activities and detect falls? Sensors
   \textbf{16}(6), ~800 (2016)
 
+\bibitem{hsieh2017novel}
+Hsieh, C.Y., Liu, K.C., Huang, C.N., Chu, W.C., Chan, C.T.: Novel hierarchical
+  fall detection algorithm using a multiphase fall model. Sensors
+  \textbf{17}(2), ~307 (2017)
+
 \bibitem{hussainelderly2019}
 Hussain, F., Umair, M.B., Ehatisham-ul Haq, M., Pires, I.M., Valente, T.,
   Garcia, N.M., Pombo, N.: An efficient machine learning-based elderly fall
