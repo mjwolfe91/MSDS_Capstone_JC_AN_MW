@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  12 AUG 2020 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  13 AUG 2020 17:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -580,24 +580,28 @@ tivity1.png> <./images/Acceleration/S1_Activity2.png> <./images/AngularVelocity
 locity/S1_Activity3.png> <./images/Acceleration/S1_Activity4.png> <./images/Ang
 ularVelocity/S1_Activity4.png> <./images/Acceleration/S1_Activity5.png> <./imag
 es/AngularVelocity/S1_Activity5.png>] [8]
-<images/VC_2clusters.png, id=140, 672.5125pt x 504.88625pt>
+<images/VC_2clusters.png, id=139, 672.5125pt x 504.88625pt>
 File: images/VC_2clusters.png Graphic file (type png)
 <use images/VC_2clusters.png>
 Package pdftex.def Info: images/VC_2clusters.png  used on input line 290.
 (pdftex.def)             Requested size: 341.43758pt x 284.52937pt.
-
+ [9 <./images/VC_2clusters.png>]
 Overfull \hbox (38.5467pt too wide) in paragraph at lines 318--329
  [] 
  []
 
-[9 <./images/VC_2clusters.png>]
-<images/Classification/3D_PCA.png, id=147, 350.30875pt x 231.86626pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+<images/Classification/3D_PCA.png, id=153, 350.30875pt x 231.86626pt>
 File: images/Classification/3D_PCA.png Graphic file (type png)
 <use images/Classification/3D_PCA.png>
 Package pdftex.def Info: images/Classification/3D_PCA.png  used on input line 3
 64.
 (pdftex.def)             Requested size: 341.45612pt x 284.5534pt.
- [10] [11 <./images/Classification/3D_PCA.png>]
+
+[11 <./images/Classification/3D_PCA.png>]
 <images/Classification/linear_classifier_boundary.png, id=161, 510.90875pt x 33
 2.24126pt>
 File: images/Classification/linear_classifier_boundary.png Graphic file (type p
@@ -607,7 +611,9 @@ Package pdftex.def Info: images/Classification/linear_classifier_boundary.png
 used on input line 375.
 (pdftex.def)             Requested size: 341.42615pt x 284.54576pt.
 
-[12 <./images/Classification/linear_classifier_boundary.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12 <./images/Classification/linear_classifier_boundary.png>]
 <images/Classification/linear_classifier_boundary_avc.png, id=168, 536.0025pt x
  371.3875pt>
 File: images/Classification/linear_classifier_boundary_avc.png Graphic file (ty
@@ -616,6 +622,9 @@ pe png)
 Package pdftex.def Info: images/Classification/linear_classifier_boundary_avc.p
 ng  used on input line 404.
 (pdftex.def)             Requested size: 341.42921pt x 284.53552pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [13 <./images/Classification/linear_classifier_boundary_avc.png>]
 <images/ClassificationPipeline.png, id=176, 411.5375pt x 687.56876pt>
 File: images/ClassificationPipeline.png Graphic file (type png)
@@ -629,39 +638,31 @@ File: images/VC_11clusters.png Graphic file (type png)
 <use images/VC_11clusters.png>
 Package pdftex.def Info: images/VC_11clusters.png  used on input line 453.
 (pdftex.def)             Requested size: 341.43333pt x 284.53154pt.
-
-Underfull \vbox (badness 4279) has occurred while \output is active []
-
  [15 <./images/ClassificationPipeline.png>] [16 <./images/VC_11clusters.png>] [
 17]
-Overfull \hbox (2.73822pt too wide) in paragraph at lines 488--489
-[]\OT1/cmr/m/n/10 We pro-pose a novel au-tonomous fall-detection sys-tem us-ing
- al-go-rithms trained
- []
-
 (./Fall+Detection_Final.bbl [18])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 505.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 513.
  [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 505.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 513.
  (./Fall+Detection_Final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 505.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 505.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 513.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 513.
 Package rerunfilecheck Info: File `Fall+Detection_Final.out' has not changed.
 (rerunfilecheck)             Checksum: 417F982E8C6FE8D5DCEAD039D49664AC;105.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 505.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 513.
  ) 
 Here is how much of TeX's memory you used:
  7484 strings out of 492616
  109578 string characters out of 6129482
- 221077 words of memory out of 5000000
+ 222077 words of memory out of 5000000
  11244 multiletter control sequences out of 15000+600000
  10811 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 33i,15n,35p,1845b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 33i,15n,35p,1845b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy
 7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10
 .pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
@@ -678,7 +679,7 @@ cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
 /texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on Fall+Detection_Final.pdf (19 pages, 1033230 bytes).
+Output written on Fall+Detection_Final.pdf (19 pages, 1034073 bytes).
 PDF statistics:
  298 PDF objects out of 1000 (max. 8388607)
  204 compressed objects within 3 object streams
