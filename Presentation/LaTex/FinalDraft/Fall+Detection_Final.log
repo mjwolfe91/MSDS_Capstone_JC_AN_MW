@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  13 AUG 2020 22:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  13 AUG 2020 22:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -607,34 +607,40 @@ tivity1.png> <./images/Acceleration/S1_Activity2.png> <./images/AngularVelocity
 locity/S1_Activity3.png> <./images/Acceleration/S1_Activity4.png> <./images/Ang
 ularVelocity/S1_Activity4.png> <./images/Acceleration/S1_Activity5.png> <./imag
 es/AngularVelocity/S1_Activity5.png>] [8]
-<images/VC_2clusters.png, id=139, 672.5125pt x 504.88625pt>
+<images/VC_2clusters.png, id=138, 672.5125pt x 504.88625pt>
 File: images/VC_2clusters.png Graphic file (type png)
 <use images/VC_2clusters.png>
 Package pdftex.def Info: images/VC_2clusters.png  used on input line 291.
 (pdftex.def)             Requested size: 341.43758pt x 284.52937pt.
-
+ [9 <./images/VC_2clusters.png>]
 Overfull \hbox (38.5467pt too wide) in paragraph at lines 319--330
  [] 
  []
 
-[9 <./images/VC_2clusters.png>]
-<images/Classification/3D_PCA.png, id=146, 350.30875pt x 231.86626pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+<images/Classification/3D_PCA.png, id=152, 350.30875pt x 231.86626pt>
 File: images/Classification/3D_PCA.png Graphic file (type png)
 <use images/Classification/3D_PCA.png>
 Package pdftex.def Info: images/Classification/3D_PCA.png  used on input line 3
 65.
 (pdftex.def)             Requested size: 341.45612pt x 284.5534pt.
- [10] [11 <./images/Classification/3D_PCA.png>]
+
+[11 <./images/Classification/3D_PCA.png>]
 <images/Classification/linear_classifier_boundary.png, id=160, 510.90875pt x 33
 2.24126pt>
 File: images/Classification/linear_classifier_boundary.png Graphic file (type p
 ng)
 <use images/Classification/linear_classifier_boundary.png>
 Package pdftex.def Info: images/Classification/linear_classifier_boundary.png  
-used on input line 380.
+used on input line 376.
 (pdftex.def)             Requested size: 341.42615pt x 284.54576pt.
 
-[12 <./images/Classification/linear_classifier_boundary.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12 <./images/Classification/linear_classifier_boundary.png>]
 <images/Classification/linear_classifier_boundary_avc.png, id=167, 536.0025pt x
  371.3875pt>
 File: images/Classification/linear_classifier_boundary_avc.png Graphic file (ty
@@ -644,59 +650,48 @@ Package pdftex.def Info: images/Classification/linear_classifier_boundary_avc.p
 ng  used on input line 405.
 (pdftex.def)             Requested size: 341.42921pt x 284.53552pt.
 
-Overfull \hbox (61.18958pt too wide) in paragraph at lines 420--429
- [] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[13 <./images/Classification/linear_classifier_boundary_avc.png>]
+ [13 <./images/Classification/linear_classifier_boundary_avc.png>]
 <images/ClassificationPipeline.png, id=175, 411.5375pt x 687.56876pt>
 File: images/ClassificationPipeline.png Graphic file (type png)
 <use images/ClassificationPipeline.png>
 Package pdftex.def Info: images/ClassificationPipeline.png  used on input line 
-441.
-(pdftex.def)             Requested size: 199.16844pt x 284.52788pt.
+439.
+(pdftex.def)             Requested size: 142.26317pt x 227.6223pt.
 
 
 LaTeX Warning: Citation `medreview' on page 14 undefined on input line 446.
 
 [14] [15 <./images/ClassificationPipeline.png>]
-<images/VC_11clusters.png, id=188, 673.51625pt x 505.89pt>
+<images/VC_11clusters.png, id=190, 673.51625pt x 505.89pt>
 File: images/VC_11clusters.png Graphic file (type png)
 <use images/VC_11clusters.png>
-Package pdftex.def Info: images/VC_11clusters.png  used on input line 464.
+Package pdftex.def Info: images/VC_11clusters.png  used on input line 456.
 (pdftex.def)             Requested size: 341.43333pt x 284.53154pt.
- [16 <./images/VC_11clusters.png>]
-Overfull \hbox (2.73822pt too wide) in paragraph at lines 489--490
-[]\OT1/cmr/m/n/10 We pro-pose a novel au-tonomous fall-detection sys-tem us-ing
- al-go-rithms trained
- []
-
-[17] (./Fall+Detection_Final.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 506.
- [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 506.
+ [16 <./images/VC_11clusters.png>] [17] (./Fall+Detection_Final.bbl [18])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 516.
+ [19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 516.
  (./Fall+Detection_Final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 506.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 506.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 516.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 516.
 Package rerunfilecheck Info: File `Fall+Detection_Final.out' has not changed.
 (rerunfilecheck)             Checksum: 417F982E8C6FE8D5DCEAD039D49664AC;105.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 506.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 516.
  ) 
 Here is how much of TeX's memory you used:
- 7701 strings out of 480608
- 116536 string characters out of 5903631
- 401123 words of memory out of 5000000
- 23383 multiletter control sequences out of 15000+600000
+ 7704 strings out of 480608
+ 116579 string characters out of 5903631
+ 401160 words of memory out of 5000000
+ 23384 multiletter control sequences out of 15000+600000
  538328 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,15n,37p,1845b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,15n,37p,1845b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -713,10 +708,10 @@ e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/202
 0/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/
 texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb>
-Output written on Fall+Detection_Final.pdf (18 pages, 1022427 bytes).
+Output written on Fall+Detection_Final.pdf (19 pages, 1025859 bytes).
 PDF statistics:
- 283 PDF objects out of 1000 (max. 8388607)
- 194 compressed objects within 2 object streams
- 60 named destinations out of 1000 (max. 500000)
+ 295 PDF objects out of 1000 (max. 8388607)
+ 202 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
  89 words of extra memory for PDF output out of 10000 (max. 10000000)
 
