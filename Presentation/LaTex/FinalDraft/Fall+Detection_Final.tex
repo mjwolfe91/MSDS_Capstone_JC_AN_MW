@@ -9,6 +9,7 @@
 \usepackage{hyperref} % Footnote references
 \usepackage{mathtools}
 \usepackage{makecell}
+\usepackage{url}
 %\graphicspath{ {./images/} }
 
 % change intro to have Background super section with Tutorial to explain SVM/KMeans/AVC, and Related works with lit review -- Michael 
@@ -39,7 +40,7 @@
 % Abstract Typeset
 % REWRITE ABSTRACT
 \begin{abstract}
-In this paper, we present a detection algorithm that accurately differentiates the event of a person falling from normal Activities of Daily Living (ADL). Our algorithm processes signals recorded from accelerometers built into wearable activity monitoring devices such as a Fitbit or Apple Watch that is worn on an individual's wrist. Given the potential danger of injury resulting from a fall, especially for the elderly population whom are more susceptible, an accurate fall detection algorithm could be the precursor to an autonomous emergency alert system that pages paramedics. Immediate medical intervention is critical for survival in urgent situations such as a stroke, cardiac event, or Traumatic Brain Injury (TBI); unfortunately, in many of these cases the individual may be unconscious and unable to intervene on their own behalf. With the advancement of geospatial technology, an algorithm that can distinctly detect the event of a fatal fall can automatically trigger a call for emergency medical services to the exact GPS coordinates of a mobile device or the wearable wrist device itself. We will explore the use of a combination of threshold-based and machine learning-based approaches to develop a refined fall-detection algorithm that builds upon previous research. 
+In this paper, we present a detection algorithm that accurately differentiates the event of a person falling from normal Activities of Daily Living (ADL). Our algorithm processes signals recorded from accelerometers and gyroscopes built into wearable activity monitoring devices such as smart watches that are worn on an individual's wrist. Existing algorithms are accurate but imprecise, and rely too much on inconveniently-placed sensors. We propose a pipeline that improves precision without sacrificing accuracy and ease of use. We present the use of a combination of threshold-based and machine learning-based approaches to develop a refined fall-detection algorithm that builds upon previous research. Using various pre-processing techniques such as magnitude and acceleration change vectors, our model labels the varied activities into falls and ADLs using k-means clustering. Finally, we test the accuracy of these labels in a Support Vector Machine (SVM) binary classifier. Our hope, given the potential danger of injury resulting from a fall, is to create an accurate and precise fall detection algorithm that could be the precursor to an autonomous emergency alert system. 
 %  Need to include - two to three sentences are used to state how the problem was solved. A single statement of the main result (singular) is then followed by a single statement of the main conclusion (singular).
 \keywords{fall detection \and Activities of Daily Living (ADL) \and signal processing}
 \end{abstract}
@@ -442,7 +443,7 @@ Across the board the AVC pipeline model performed the best. As mentioned previou
 	\label{Figure 5: Classification Pipeline}
 \end{figure}
 
-	As mentioned in the results, our final model (AVC to K-Means to SVM) had an accuracy of about 78 percent. Although there is sparse research on the efficacy of existing fall detection systems outside laboratory settings, owing to manufacturers being reticent to releasing that information, many consumer studies report similar accuracy to our result. However, unlike these products our model is much more precise, at 74 percent. 
+	As mentioned in the results, our final model (AVC to K-Means to SVM) had an accuracy of about 78 percent. Although there is sparse research on the efficacy of existing fall detection systems outside laboratory settings, owing to manufacturers being reticent to releasing that information, many consumer studies report similar accuracy to our result.\cite{medreview} However, unlike these products our model is much more precise, at 74 percent. 
 	
 	A potential concern was noted when plotting the decision boundary - the possibility of misclassification due to narrowness in the hyperplane. Although the data on which we trained the model produced a good recall score (over 82 percent) it is worth exploring some possible strategies to make the model more adaptable and resilient. Outliers were observed in the formed AVC and WVC centroid clusters. These data points with larger vector change values for acceleration and angular velocity were identified to be from trials of activity ten as shown in figure five. Activity 10 from the data collection process was jumping which consists of sudden acceleration changes. Given the nature of AVCs, it is expected that this activity would generate large vectors, which would then manifest as outliers in a cluster.
 	
